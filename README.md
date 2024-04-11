@@ -30,6 +30,7 @@ RAG combines these two approaches by incorporating a retriever component that re
 
 
 # Resources and Further Reading:
+[Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](http://arxiv.org/abs/2005.11401)
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
