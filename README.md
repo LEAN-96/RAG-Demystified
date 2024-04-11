@@ -18,6 +18,9 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 # Introduction to RAG:
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/eb6b029a-d41f-43e4-b362-f09cdebbec7c)
 
+
+RAG was first introduced by [^1]
+
 # Applications of RAG:
 
 
