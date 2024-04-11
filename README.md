@@ -28,6 +28,7 @@ RAG combines these two approaches by incorporating a retriever component that re
 
 # Applications of RAG:
 
+# Frameworks
 
 # Resources and Further Reading:
 
