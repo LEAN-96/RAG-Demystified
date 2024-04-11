@@ -60,6 +60,8 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](http://arxiv.org/abs/2005.11401)
 
+[Retrieval Augmentation Reduces Hallucination in Conversation](https://arxiv.org/abs/2104.07567)
+
 [A Survey on Retrieval-Augmented Text Generation](https://arxiv.org/abs/2202.01110)
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
