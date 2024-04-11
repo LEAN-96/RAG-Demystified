@@ -54,7 +54,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 [Visual introduction to Transformers](https://www.youtube.com/watch?v=ISPId9Lhc1g)
 
-## Large KLanguage Models:
+## Large Language Models:
 
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
 
