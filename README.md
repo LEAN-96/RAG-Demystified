@@ -19,7 +19,12 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/eb6b029a-d41f-43e4-b362-f09cdebbec7c)
 
 
-RAG was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401)
+
+RAG, short for Retrieval-Augmented Generation, was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) in 2020. The authors introduced RAG as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources. RAG builds upon the advancements in large language models (LLMs) like GPT (Generative Pre-trained Transformer) models, integrating retrieval-based methods to enhance the generation process.
+
+For beginners, understanding RAG starts with grasping the core concepts of retrieval-based and generation-based approaches in NLP. Retrieval-based methods involve retrieving relevant information from external knowledge sources, such as databases or pre-existing texts, to inform the generation process. On the other hand, generation-based methods focus on generating text based solely on the input prompt without explicit access to external knowledge.
+
+RAG combines these two approaches by incorporating a retriever component that retrieves relevant context from external knowledge sources and a generator component that generates text conditioned on both the input prompt and the retrieved context. This fusion enables RAG to produce more informative and coherent responses compared to traditional generation models.
 
 # Applications of RAG:
 
