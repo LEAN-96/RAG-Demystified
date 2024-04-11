@@ -30,7 +30,11 @@ RAG combines these two approaches by incorporating a retriever component that re
 
 
 # Resources and Further Reading:
+
+## Transformer:
 [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
+## RAG:
 
 [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
 
