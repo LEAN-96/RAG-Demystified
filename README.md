@@ -29,6 +29,11 @@ RAG combines these two approaches by incorporating a retriever component that re
 # Applications of RAG:
 
 # Frameworks
+[LangChain](https://www.langchain.com/)
+
+[LlamaIndex](https://www.llamaindex.ai/)
+
+[Haystack)](https://haystack.deepset.ai/)
 
 # Resources and Further Reading:
 
