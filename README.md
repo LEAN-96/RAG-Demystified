@@ -33,7 +33,7 @@ RAG combines these two approaches by incorporating a retriever component that re
 
 [LlamaIndex](https://www.llamaindex.ai/)
 
-[Haystack)](https://haystack.deepset.ai/)
+[Haystack](https://haystack.deepset.ai/)
 
 # Resources and Further Reading:
 
