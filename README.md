@@ -23,5 +23,7 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 # Resources and Further Reading:
 [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](http://arxiv.org/abs/2005.11401)
+
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
+
 [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
