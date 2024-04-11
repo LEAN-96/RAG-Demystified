@@ -33,6 +33,7 @@ RAG combines these two approaches by incorporating a retriever component that re
 
 ## Transformer:
 [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+[Visual introduction to Transformers](https://www.youtube.com/watch?v=ISPId9Lhc1g)
 
 ## RAG:
 
