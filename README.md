@@ -47,3 +47,8 @@ RAG combines these two approaches by incorporating a retriever component that re
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
+
+
+## LLM Stack
+
+[LetsBuildAI](https://letsbuild.ai/)
