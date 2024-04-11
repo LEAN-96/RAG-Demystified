@@ -22,4 +22,5 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 
 # Resources and Further Reading:
-![link] (https://arxiv.org/abs/2402.19473)
+
+[Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
