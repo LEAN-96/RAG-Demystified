@@ -51,7 +51,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 | Frameworks | Tools | Evaluation |
 |-----------------|-----------------|-----------------|
-| [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/)) | [RAGAS](https://github.com/explodinggradients/ragas) |
+| [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) |
 | [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |
 | [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | 
 | Row 3, Column 1 | Row 3, Column 2 | [RAG-Arena](https://github.com/mendableai/rag-arena) |
