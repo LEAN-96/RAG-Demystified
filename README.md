@@ -39,9 +39,9 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 
 # Applications of RAG:
-- Chatbot for Customer supprt
-- Documents Q & A
-- Internal knowledge
+- Chatbot for Customer support
+- Documents Q&A
+- Internal knowledge Q&A
 - Agents
 - Multimodal Applications
 - Query analysis
