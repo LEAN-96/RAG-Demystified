@@ -47,7 +47,13 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 - Query analysis
 - Structured Data Extraction
 - 
-# Frameworks
+# Frameworks & Tools
+
+| Frameworks | Tools | Column 3 Header |
+|-----------------|-----------------|-----------------|
+| [LangChain](https://www.langchain.com/) | [FlowiseAI]([https://haystack.deepset.ai/](https://flowiseai.com/)) | Row 1, Column 3 |
+| [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow] (https://www.langflow.org/) | Row 2, Column 3 |
+| [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | Row 3, Column 3 |
 [LangChain](https://www.langchain.com/)
 
 [LlamaIndex](https://www.llamaindex.ai/)
