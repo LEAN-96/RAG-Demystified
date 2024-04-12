@@ -55,7 +55,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 | [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |
 | [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | 
 | Row 3, Column 1 | Row 3, Column 2 | [RAG-Arena](https://github.com/mendableai/rag-arena) |
-| Row 3, Column 1 | Row 3, Column 2 | [Auto-RAG]([https://github.com/mendableai/rag-arena](https://github.com/Marker-Inc-Korea/AutoRAG)) |
+| Row 3, Column 1 | Row 3, Column 2 | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) |
 
 # Resources and Further Reading:
 
