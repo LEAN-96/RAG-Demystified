@@ -37,8 +37,9 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 # Naive RAG
 
+**High-Level RAG Architecture:**
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/e255ed27-720c-4ce1-b262-2a3a0bdce66d)
-**High-Level RAG Architecture**
+
 
 # Advanced RAG
 
