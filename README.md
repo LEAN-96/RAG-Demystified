@@ -8,7 +8,6 @@ But we don't stop there. Recognizing that the AI community often assumes familia
 
 Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bf6e8d60-689f-4df0-8546-4eee241d44b4)
 
 
 # Fundamentals of Large Language Models (LLMs):
@@ -38,7 +37,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 # Naive RAG
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c7c0266f-e581-4f65-a1a3-77b83b5aa92c)
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/e255ed27-720c-4ce1-b262-2a3a0bdce66d)
 **High-Level RAG Architecture**
 
 # Advanced RAG
