@@ -35,6 +35,9 @@ Additionally, RAG enhances transparency and helps with error checking and copyri
 
 One of the significant advantages of RAG is that it reduces the need for frequent retraining (fine-tuning) of the model. This is because the external database is continuously updated with new information, eliminating the reliance on the model to memorize everything it needs to know. This saves time and computational resources, making RAG a more efficient and reliable approach for generating text.
 
+# Naive RAG
+
+# Advanced RAG
 
 # Multimodal RAG
 
