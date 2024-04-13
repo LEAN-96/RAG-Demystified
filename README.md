@@ -22,7 +22,7 @@ Additionally, LLMs have technical restrictions, such as limits on the amount of 
 
 # Introduction to RAG:
 
-![RAG-Architecture2](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/e2484fd9-7c76-47dc-ab20-38f4554c08d0)
+![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
 
 
 
