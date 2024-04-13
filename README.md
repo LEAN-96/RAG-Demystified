@@ -87,6 +87,8 @@ Recent studies shows the shift towards visual RAG approaches.
 
 [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
 
+[RAG for LLMs](https://www.promptingguide.ai/research/rag)
+
 # RAG Orchestration Frameworks & Tools
 
 | Frameworks | Tools | Evaluation |
