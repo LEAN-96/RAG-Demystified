@@ -47,15 +47,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 - Query analysis
 - Structured Data Extraction
 - 
-# Frameworks & Tools
 
-| Frameworks | Tools | Evaluation |
-|-----------------|-----------------|-----------------|
-| [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) |
-| [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |
-| [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | 
-| [Canopy](https://github.com/pinecone-io/canopy) |  | [RAG-Arena](https://github.com/mendableai/rag-arena) |
-| [RAGFlow](https://github.com/infiniflow/ragflow?tab=readme-ov-file) | Row 3, Column 2 | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) |
 
 # Resources and Further Reading:
 
@@ -86,6 +78,16 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
+
+# RAG Orchestration Frameworks & Tools
+
+| Frameworks | Tools | Evaluation |
+|-----------------|-----------------|-----------------|
+| [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) |
+| [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |
+| [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | 
+| [Canopy](https://github.com/pinecone-io/canopy) |  | [RAG-Arena](https://github.com/mendableai/rag-arena) |
+| [RAGFlow](https://github.com/infiniflow/ragflow?tab=readme-ov-file) | Row 3, Column 2 | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) |
 
 
 ## LLM Stack
