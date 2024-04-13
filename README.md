@@ -8,7 +8,8 @@ But we don't stop there. Recognizing that the AI community often assumes familia
 
 Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/eb6b029a-d41f-43e4-b362-f09cdebbec7c)
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bf6e8d60-689f-4df0-8546-4eee241d44b4)
+
 
 # Fundamentals of Large Language Models (LLMs):
 
