@@ -39,7 +39,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 # Advanced RAG
 
-# Multimodal RAG
+# Modular RAG
 
 Recent studies shows the shift towards visual RAG approaches.
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
