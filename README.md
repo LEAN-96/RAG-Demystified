@@ -28,11 +28,15 @@ Additionally, LLMs have technical restrictions, such as limits on the amount of 
 
 To address these limitations, the field of AI has introduced a new approach called Retrieval-Augmented Generation (RAG). RAG was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) in 2020. The authors introduced RAG as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge). RAG builds upon the advancements in large language models (LLMs) like GPT (Generative Pre-trained Transformer) models, integrating retrieval-based methods to enhance the generation process and to overcome the fixed amount of knowledge (Parametric knowledge).
 
-Imagine a student attending an exam. Think of a pre-trained Large Language Model (LLM) as a closed-book exam where the student relies solely on their memorized knowledge without referring to any materials. They're expected to answer questions based on what they've learned beforehand.
+Let's explore RAG through the analogy of a student attending an exam:
+Think of a pre-trained Large Language Model (LLM) as a closed-book exam where the student relies solely on their memorized knowledge without referring to any materials. They're expected to answer questions based on what they've learned beforehand.
 
 Now, picture RAG as an open-book exam for the same student, but with a twist: they haven't studied! In this scenario, the student can access a textbook during the exam, similar to how RAG integrates an external knowledge base with the language model. 
 
 In essence, RAG is like an open-book exam without studying, where the student (or the model) can access additional resources but must still navigate through them to find the correct information, while pre-trained LLMs are more like closed-book exams where the model can only use what it already knows.
+
+![RAG_Analogy](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/92b40321-be9d-44c0-9c25-96900ad67ef4)
+
 
 For beginners, understanding RAG starts with grasping the core concepts of retrieval-based and generation-based approaches in NLP. Retrieval-based methods involve retrieving relevant information from external knowledge sources, such as databases or pre-existing texts, to inform the generation process. On the other hand, generation-based methods focus on generating text based solely on the input prompt without explicit access to external knowledge. 
 
