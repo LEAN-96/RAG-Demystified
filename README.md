@@ -125,7 +125,8 @@ Recent studies shows the shift towards visual RAG approaches.
 | [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | 
 | [Canopy](https://github.com/pinecone-io/canopy) |  | [RAG-Arena](https://github.com/mendableai/rag-arena) |
 | [RAGFlow](https://github.com/infiniflow/ragflow?tab=readme-ov-file) |  | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) |
-|  |  | [RAGTune](https://github.com/misbahsy/RAGTune) |
+| [DSPy](https://github.com/stanfordnlp/dspy) | [Meltano](https://meltano.com/) | [RAGTune](https://github.com/misbahsy/RAGTune) |
+|  |[Cohere Coral](https://cohere.com/coral)|  |
 
 ## LLM Stack
 
