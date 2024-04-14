@@ -51,7 +51,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 **High-Level RAG Architecture:**
 ![RAG-Architecture2](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b944dc68-dfa0-4801-b65e-41f4d105d2ad)
 
-
+The entire RAG-Process is often referred as "RAG-Pipeline".
 
 # Advanced RAG
 
