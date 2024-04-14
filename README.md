@@ -12,7 +12,7 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 # Fundamentals of Large Language Models (LLMs):
 
-Large Language Models (LLMs) are not just static tools but exhibit remarkable emergent abilities. When we talk about emergent abilities we're referring to the unexpected talents or skills these models demonstrate as they interact with users or tasks. These capabilities can sometimes surprise us, showing functionalities that weren't explicitly programmed into the model. showcasing unforeseen functionalities during interactions. LLMs demonstrate various emergent abilities, such as instruction following, in-context learning and step-by-step reasoning. These capabilities include problem-solving, where LLMs provide insightful solutions to tasks they weren't trained on, adaptation to user inputs, and contextual understanding.
+Large Language Models (LLMs) are not just static tools but exhibit remarkable emergent abilities. When we talk about emergent abilities we're referring to the unexpected talents or skills these models demonstrate as they interact with users or tasks. These capabilities can sometimes surprise us, showing functionalities that weren't explicitly programmed into the model. LLMs demonstrate various emergent abilities, such as instruction following, in-context learning and step-by-step reasoning. These capabilities include problem-solving, where LLMs provide insightful solutions to tasks they weren't trained on, adaptation to user inputs, and contextual understanding.
 
 LLMs perform well when given instructions during inference, and they excel when provided with contextual reference data. They prioritize contextual knowledge over data they've been trained on, leading to more accurate responses.
 
