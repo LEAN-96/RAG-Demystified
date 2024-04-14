@@ -107,6 +107,15 @@ Recent studies shows the shift towards visual RAG approaches.
 
 [RAG for LLMs](https://www.promptingguide.ai/research/rag)
 
+# Advanced RAG
+
+| Pre-Retrieval Process | Post-Retrieval Process | Generation Process |
+|-----------------|-----------------|-----------------|
+|  |  |  |
+[Corrective Retrieval Augmented Generation](http://arxiv.org/abs/2401.15884)
+
+[RAFT: Adapting Language Model to Domain Specific RAG](http://arxiv.org/abs/2403.10131)
+
 # RAG Orchestration Frameworks & Tools
 
 | Frameworks | Tools | Evaluation |
