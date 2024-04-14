@@ -55,7 +55,7 @@ One of the significant advantages of RAG is that it reduces the need for frequen
 
 # Advanced RAG
 
-Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, RAG may struggle to discern which information is relevant.
+Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant.
 
 # Modular RAG
 
