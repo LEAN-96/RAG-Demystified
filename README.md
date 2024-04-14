@@ -12,7 +12,15 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 # Fundamentals of Large Language Models (LLMs):
 
-Emergent abilities
+Large Language Models (LLMs) are not just static tools but exhibit remarkable emergent abilities. When we talk about emergent abilities we're referring to the unexpected talents or skills these models demonstrate as they interact with users or tasks. These capabilities can sometimes surprise us, showing functionalities that weren't explicitly programmed into the model. showcasing unforeseen functionalities during interactions. LLMs demonstrate various emergent abilities, such as instruction following, in-context learning and step-by-step reasoning. These capabilities include problem-solving, where LLMs provide insightful solutions to tasks they weren't trained on, adaptation to user inputs, and contextual understanding.
+
+LLMs perform well when given instructions during inference, and they excel when provided with contextual reference data. They prioritize contextual knowledge over data they've been trained on, leading to more accurate responses.
+
+In-context learning is another important ability, allowing LLMs to refine their responses based on specific contexts. This enhances the relevance and coherence of their outputs.
+
+The emergence of these abilities distinguishes LLMs from smaller models. For example, LLMs like GPT-3 exhibit strong in-context learning abilities, allowing them to generate expected outputs without additional training. They can also follow instructions for new tasks without explicit examples, improving their generalization ability.
+
+Furthermore, LLMs can solve complex tasks involving multiple reasoning steps, such as mathematical word problems, through strategies like the chain-of-thought prompting. This ability, along with others, emerges as LLMs scale up in size, contributing to their performance gains. Overall, emergent abilities in LLMs showcase their adaptability and intelligence, making them versatile tools for various tasks and applications. [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
 
 # Limitations of Large Language Models (LLMs):
 Despite their impressive abilities, LLMs have notable limitations, especially when applied in real-world situations. One major issue is that they sometimes generate information that is incorrect or entirely made up, which is called "hallucination." This problem becomes worse when combined with issues like bias, user privacy concerns, and security risks.
