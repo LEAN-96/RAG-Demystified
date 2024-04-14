@@ -109,6 +109,8 @@ Recent studies shows the shift towards visual RAG approaches.
 
 [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](http://arxiv.org/abs/2005.11401)
 
+[Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)
+
 [Retrieval Augmentation Reduces Hallucination in Conversation](https://arxiv.org/abs/2104.07567)
 
 [A Survey on Retrieval-Augmented Text Generation](https://arxiv.org/abs/2202.01110)
