@@ -12,6 +12,7 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 # Fundamentals of Large Language Models (LLMs):
 
+Emergent abilities
 
 # Limitations of Large Language Models (LLMs):
 Despite their impressive abilities, LLMs have notable limitations, especially when applied in real-world situations. One major issue is that they sometimes generate information that is incorrect or entirely made up, which is called "hallucination." This problem becomes worse when combined with issues like bias, user privacy concerns, and security risks.
@@ -91,6 +92,9 @@ Recent studies shows the shift towards visual RAG approaches.
 [Large Language Models: A Survey](https://arxiv.org/abs/2402.06196)
 
 [LLM Visualization](https://bbycroft.net/llm)
+
+[Are Emergent Abilities of Large Language Models a Mirage?](https://arxiv.org/abs/2304.15004)
+
 ## RAG:
 
 [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
