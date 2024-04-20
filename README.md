@@ -144,7 +144,7 @@ Recent studies shows the shift towards visual RAG approaches.
 | [Canopy](https://github.com/pinecone-io/canopy) | [Cohere Coral](https://cohere.com/coral)  | [RAG-Arena](https://github.com/mendableai/rag-arena) |
 | [RAGFlow](https://github.com/infiniflow/ragflow?tab=readme-ov-file) | [Meltano](https://meltano.com/)  | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) |
 | [DSPy](https://github.com/stanfordnlp/dspy) |  | [RAGTune](https://github.com/misbahsy/RAGTune) |
-|  |[Create-TSI](https://github.com/telekom/create-tsi)  | [ChunkVisualizer](https://huggingface.co/spaces/Nymbo/chunk_visualizer)|
+| [Cognita](https://github.com/truefoundry/cognita) |[Create-TSI](https://github.com/telekom/create-tsi)  | [ChunkVisualizer](https://huggingface.co/spaces/Nymbo/chunk_visualizer)|
 |  |[Verta](https://www.verta.ai/rag)  | [ChunkViz](https://chunkviz.up.railway.app/) |
 |  |  |  |
 |  |  |  |
