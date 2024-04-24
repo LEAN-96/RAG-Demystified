@@ -64,8 +64,14 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 
 **High-Level RAG Architecture:**
 ![RAG-Architecture2](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b944dc68-dfa0-4801-b65e-41f4d105d2ad)
-
 The entire RAG-Process is often referred as "RAG-Pipeline".
+
+Indexing:
+
+Retrieval:
+
+Generation: 
+RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
 
 # Advanced RAG
 
