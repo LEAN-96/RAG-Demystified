@@ -145,7 +145,7 @@ Recent studies shows the shift towards visual RAG approaches.
 # RAG Orchestration Frameworks & Tools
 
 | Frameworks | Tools | Evaluation | Visualization |
-|-----------------|-----------------|-----------------|
+|-----------------|-----------------|-----------------|-----------------|
 | [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) | [RAGexplorer](https://github.com/gabrielchua/RAGxplorer/) | 
 | [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |[RAGmap](https://github.com/JGalego/RAGmap) |
 | [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | [ChunkVisualizer](https://huggingface.co/spaces/Nymbo/chunk_visualizer) |
