@@ -86,7 +86,7 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on.
 
-When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we opted for [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Here's what the visualization looks like:
+When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we opted for [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 tokens and a chunk overlap of 25 tokens. Here's what the visualization looks like:
 
 ![RAG_Index_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/04c55cb0-ffdd-4278-be41-5a018f103733)
 
