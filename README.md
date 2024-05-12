@@ -97,11 +97,11 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the question encoder.
 
-2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds documents whose vector representations are closest to the user question using measurements like cosine similarity. 
-
-3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
+2. Document Retrieval: Using the encoded query/question, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks.
+3. 
+4. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
-4. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
+5. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
 
 ![RAG_Retrieval_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c1fe9d3d-1151-4151-9c30-3b893fb1eae0)
 
