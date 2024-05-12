@@ -79,7 +79,8 @@ Transforming unstructured data into a format that AI models can efficiently proc
 
 1. Data Transformation: We start by getting our data ready. This involves cleaning up and extracting information from different formats like PDFs or web pages. Then, we make sure everything is in a standard text format that the model can understand.
 
-2. Chunking: Next, we break the text into smaller pieces, kind of like cutting a big cake into slices. This helps the model handle the information better, especially since it can only process a certain amount at a time (limited context window).
+2. Chunking: Next, we break the text into smaller pieces, kind of like cutting a big cake into slices. This helps the model handle the information better, especially since it can only process a certain amount at a time (Limited context window). Chunk size plays a role in how our system understands information. When a chunk contains multiple ideas, the semantic relationship based on the whole chunk might not precisely show the importance of the main information. This could lead to confusion or inaccurate results.
+Choosing a smaller chunk gives a clearer context, focusing on specific details. On the other hand, larger chunks include more information, but some of it might not be directly related to what the user is looking for. So, finding the right balance is key to getting accurate and relevant results.
 
 3. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. In other words the encoded text is transformed as high-dimensional vectors, capturing semantic information and relationships.
 
