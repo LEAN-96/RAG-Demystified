@@ -72,10 +72,12 @@ Sources:
 The entire RAG-Process is often referred as "RAG-Pipeline".
 
 Indexing:
+![Indexing1](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6293147f-2dca-4722-a33c-671bbc2aca7c)
 
 Retrieval:
 
-![Vector Space](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/155b3412-5edc-4f5b-a6ef-f0fe355817b8)
+![Retrieval1](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/07d04545-1b91-4166-a114-64b90b2dbdae)
+
 
 
 Generation: 
