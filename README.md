@@ -84,8 +84,9 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 3. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. In other words the encoded text is transformed as high-dimensional vectors, capturing semantic information and relationships.
 
-5. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on.
+4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on.
 
+For visualizing our index we use a tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces Dimensionality to 2D and 3D vector space. As an embedding model we used [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5) and indexed the initial [RAG paper](http://arxiv.org/abs/2005.11401). The visualization looks as follows:
 
 ![RAG_Index_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/04c55cb0-ffdd-4278-be41-5a018f103733)
 
