@@ -86,7 +86,7 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on.
 
-For visualizing our index we use a tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces Dimensionality to 2D and 3D vector space. As an embedding model we used [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5) and indexed the initial [RAG paper](http://arxiv.org/abs/2005.11401). The visualization looks as follows:
+When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we opted for [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Here's what the visualization looks like:
 
 ![RAG_Index_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/04c55cb0-ffdd-4278-be41-5a018f103733)
 
@@ -99,6 +99,10 @@ For visualizing our index we use a tool called [RAGmap](https://github.com/JGale
 
 ## Generation: 
 RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
+
+Sources:
+
+[Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 # Advanced RAG
 
