@@ -75,7 +75,8 @@ Indexing:
 
 Retrieval:
 
-![Vector Space](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/5804da7e-7ca8-400c-acb4-f7136236ff33)
+![Vector Space](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/155b3412-5edc-4f5b-a6ef-f0fe355817b8)
+
 
 Generation: 
 RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
