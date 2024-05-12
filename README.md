@@ -74,6 +74,7 @@ The entire RAG-Process is often referred as "RAG-Pipeline".
 Indexing:
 
 Retrieval:
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/cfe9fd2a-3769-4662-b6cc-d887d96290d0)
 
 Generation: 
 RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
