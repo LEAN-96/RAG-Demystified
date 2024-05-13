@@ -108,7 +108,10 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6c002c17-8be2-461f-8e36-07432d32a91b)
 
-
+ $$d(z)= $$  
+ 
+ $$\text{BERT}_{d}(z)$$
+ 
 "*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 5. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
@@ -118,13 +121,17 @@ Or in the words of the authors:
 "*During inference time, we apply the passage encoder EP (p) to all the passages and index them using FAISS ofﬂine. FAISS is an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 
-$$\text{E}_{P}(p)$$ == d(z) = $$\text{BERT}_{d}(z)$$.
+$$\text{E}_{P}(p)$$
+==
+ $$d(z)= $$  
+ 
+ $$\text{BERT}_{d}(z)$$
 
 The entire index process is described as followed:
 
 "*Given a collection of M text passages, the goal of our dense passage retriever (DPR) is to index all the passages in a low-dimensional and continuous space, such that it can retrieve efﬁciently the top k passages relevant to the input question for the reader at run-time. Our dense passage retriever (DPR) uses a dense encoder EP (·) which maps any text passage to a d- dimensional real-valued vectors and builds an index for all the M passages that we will use for retrieval.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
-When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we also used [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 characters and a chunk overlap of 25 characters. t-SNE algorithm is breaking down the encoded 768 dimensions of $$\text{BERT}_{d}(z)$$ and $$\text{BERT}_{q}(x)$$ into a 2-dimensional space.
+When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we also used [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 characters and a chunk overlap of 25 characters. t-SNE algorithm is breaking down the encoded 768 dimensions of BERTd(z) and BERTq(x) into a 2-dimensional space.
 
 Here's what the visualization in a 2D space looks like:
 
@@ -149,8 +156,12 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
+$$\text{E}_{Q}(q)$$
+==
+ $$q(x)= $$
+ 
+$$\text{BERT}_{q}(x)$$
 
-$$\text{E}_{Q}(q)$$ == q(x) = $$\text{BERT}_{q}(x)$$.
 
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
