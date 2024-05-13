@@ -94,18 +94,17 @@ Transforming unstructured data into a format that AI models can efficiently proc
 Choosing a smaller chunk gives a clearer context, focusing on specific details. On the other hand, larger chunks include more information, but some of it might not be directly related to what the user is looking for. So, finding the right balance is key to getting accurate and relevant results.
 
 4. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. These models, also known as encoding models or **bi-encoders**, are trained on a large corpus of data, making them powerful enough to encode chunks of documents into single vector embeddings. Vector embeddings are dense representations of objects in a continuous high-dimensional vector space, capturing semantic relationships between objects through distance and direction. Referencing back to [Dense passage retriever model](https://github.com/facebookresearch/DPR) from Facebook AI, the index encoding model utilized the document encoder BERT.
-  
-  
-       d(z) = BERTd(z).
+
+        d(z) = BERTd(z).
 
 
-8. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
+5. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
 
 Or in the words of the authors:
 
 "*During inference time, we apply the passage encoder EP (p) to all the passages and index them using FAISS ofﬂine. FAISS is an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.*"
 
-    EP (p) == d(z) = BERTd(z).
+        EP (p) == d(z) = BERTd(z).
 
 The entire index process is described as followed:
 
@@ -131,7 +130,7 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*"
 
-    EQ(q) == q(x) = BERTq(x).
+        EQ(q) == q(x) = BERTq(x).
 
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*"
 
@@ -139,7 +138,7 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*"
 
-    == pη(z|x) ∝ exp  d(z)⊤q(x)
+    sim(q, p) = EQ(q)ᵀEP (p)  == pη(z|x) ∝ exp  d(z)⊤q(x)
 
 3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
