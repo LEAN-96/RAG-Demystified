@@ -60,9 +60,6 @@ In essence, RAG is like an open-book exam without studying, where the student (o
 
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence as input and produces a corresponding sequence as output. Generation-based models in an traditional seq2seq model  focus on creating text solely based on the input without looking at external sources. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input to the generator, RAG uses retrieval-based methods, which involve finding useful information from outside sources, like databases or existing texts, to help with generating text. RAG combines these two methods by using [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906) (DPR) which is based on bi-encoder architecture to find relevant context from external sources and a generator component to produce text based on both the input and retrieved context. For this purpose two independent [BERT models](https://arxiv.org/abs/1810.04805) were used: An document encoder BERT and a fine-tuned query encoder BERT.
 
-<div style="text-align:center;">
-    <img src="https://github.com/LEAN-96/RAG-Demystified/assets/150592634/758f3ed3-e86c-4341-bd8d-26eab4ba46d9" alt="image">
-</div>
  
 $$\text{d(z)= BERT}_{d}(z)$$
  
@@ -110,7 +107,6 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 4. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. These models, also known as encoding models or **bi-encoders**, are trained on a large corpus of data, making them powerful enough to encode chunks of documents into single vector embeddings. Vector embeddings are dense representations of objects in a continuous high-dimensional vector space, capturing semantic relationships between objects through distance and direction. Referencing back to [Dense passage retriever model](https://github.com/facebookresearch/DPR) from Facebook AI, the index encoding model utilized the document encoder BERT.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6c002c17-8be2-461f-8e36-07432d32a91b)
 
 $$\text{d(z)= BERT}_{d}(z)$$
  
@@ -146,8 +142,6 @@ In ordner to compare we ingested the same document with the same metrics using a
 Retrieval in RAG involves fetching highly relevant context from a retriever. Here is how it works:
 
 1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT
-  
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ead7eab1-943e-4728-b9e6-c8783163ded3)
 
 $$\text{q(x)= BERT}_{q}(x)$$
 
@@ -164,17 +158,13 @@ $$\text{q(x)= BERT}_{q}(x)$$
 
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/eda33212-9dd1-4e47-ad6d-2bba7e161720)
-
-
 $$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
 
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/2c7618e2-e244-4821-bd4c-5ea516bc0674)  == ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bf3b1814-0b2c-438b-a209-fe85d7caa879)
-
 $$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
-
+==
+$$\text{sim}(q, p) = p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$$$
 
 %3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
