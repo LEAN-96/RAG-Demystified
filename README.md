@@ -63,6 +63,10 @@ Understanding RAG begins with grasping the main ideas of retrieval-based and gen
 <div style="text-align:center;">
     <img src="https://github.com/LEAN-96/RAG-Demystified/assets/150592634/758f3ed3-e86c-4341-bd8d-26eab4ba46d9" alt="image">
 </div>
+ 
+$$\text{d(z)= BERT}_{d}(z)$$
+ 
+$$\text{q(x)= BERT}_{q}(x)$$
 
 **d(z) is a dense representation of a document produced by a [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) document encoder, and q(x) is a query representation produced by a query encoder, also based on [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased).** (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -108,9 +112,7 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6c002c17-8be2-461f-8e36-07432d32a91b)
 
- $$d(z)= $$  
- 
- $$\text{BERT}_{d}(z)$$
+$$\text{d(z)= BERT}_{d}(z)$$
  
 "*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -123,9 +125,7 @@ Or in the words of the authors:
 
 $$\text{E}_{P}(p)$$
 ==
- $$d(z)= $$  
- 
- $$\text{BERT}_{d}(z)$$
+$$\text{d(z)= BERT}_{d}(z)$$
 
 The entire index process is described as followed:
 
@@ -149,6 +149,7 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
   
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ead7eab1-943e-4728-b9e6-c8783163ded3)
 
+$$\text{q(x)= BERT}_{q}(x)$$
 
 "*q(x) is a query representation produced by a query encoder, also based on BERT_BASE.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -158,9 +159,7 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 $$\text{E}_{Q}(q)$$
 ==
- $$q(x)= $$
- 
-$$\text{BERT}_{q}(x)$$
+$$\text{q(x)= BERT}_{q}(x)$$
 
 
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
