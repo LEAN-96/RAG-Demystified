@@ -167,6 +167,8 @@ $$\text{q(x)= BERT}_{q}(x)$$
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/eda33212-9dd1-4e47-ad6d-2bba7e161720)
 
 
+$$\text{sim}(q, p) = \text{EQ}(q)^\top \text{EP}(p)$$
+
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/2c7618e2-e244-4821-bd4c-5ea516bc0674)  == ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bf3b1814-0b2c-438b-a209-fe85d7caa879)
