@@ -79,7 +79,9 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 # Naive RAG
 
 **High-Level RAG Architecture:**
-![RAG-Architecture2](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b944dc68-dfa0-4801-b65e-41f4d105d2ad)
+
+![RAG_Updated](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/4ed80cc8-388c-44db-87d9-547cdb8fb757)
+
 
 The basic RAG process involves indexing, retrieval, and generation. In simple terms, a user's input is used to search for relevant documents, which are then combined with a prompt and given to the model to create a final response. If the interaction involves multiple turns, previous conversation history can be included in the prompt. The entire RAG-Process is often referred as "RAG-Pipeline".
 
