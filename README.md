@@ -53,7 +53,9 @@ In essence, RAG is like an open-book exam without studying, where the student (o
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence as input and produces a corresponding sequence as output. Generation-based models in an traditional seq2seq model  focus on creating text solely based on the input without looking at external sources. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input to the generator, RAG uses retrieval-based methods, which involve finding useful information from outside sources, like databases or existing texts, to help with generating text. RAG combines these two methods by using [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906) (DPR) which is based on bi-encoder architecture to find relevant context from external sources and a generator component to produce text based on both the input and retrieved context. For this purpose two independent [BERT models](https://arxiv.org/abs/1810.04805) were used: An document encoder BERT and a fine-tuned query encoder BERT.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/f552edb1-b0bc-49e3-b2fe-2a0706293cb5)
-d(z) is a dense representation of a document produced by a BERT_BASE document encoder, and q(x) is a query representation produced by a query encoder, also based on BERT_BASE.
+
+*pη(z|x) ∝ exp  d(z)⊤q(x) d(z) = BERTd(z), q(x) = BERTq(x)*
+d(z) is a dense representation of a document produced by a [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) document encoder, and q(x) is a query representation produced by a query encoder, also based on [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased).
 
 For the generator component the authors used a encoder-decoder pre-trained seq2seq transformer, [BART-large](https://arxiv.org/abs/1910.13461).
 
