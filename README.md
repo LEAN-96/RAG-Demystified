@@ -114,16 +114,14 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*"
 
-"*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:
+"*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*"
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6d4fa9a9-f692-4e16-9083-24addea98a0c)
 
-sim(q, p) = EQ(q)ᵀEP (p).*"
 
-   
-4. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
+3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
-5. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
+4. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
 
 ![RAG_Retrieval_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c1fe9d3d-1151-4151-9c30-3b893fb1eae0)
 
