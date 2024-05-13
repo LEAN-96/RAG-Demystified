@@ -32,6 +32,8 @@ Another important limitation is that LLMs have a fixed amount of knowledge (Para
 
 Additionally, LLMs have technical restrictions, such as limits on the amount of text they can process at once (Token limits). This can affect their ability to handle large blocks of text and may make it harder to scale their use for bigger projects. 
 
+# Introduction to Transformers:
+
 # Introduction to RAG:
 
 ![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
