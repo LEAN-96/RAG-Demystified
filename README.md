@@ -60,11 +60,9 @@ In essence, RAG is like an open-book exam without studying, where the student (o
 
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence as input and produces a corresponding sequence as output. Generation-based models in an traditional seq2seq model  focus on creating text solely based on the input without looking at external sources. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input to the generator, RAG uses retrieval-based methods, which involve finding useful information from outside sources, like databases or existing texts, to help with generating text. RAG combines these two methods by using [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906) (DPR) which is based on bi-encoder architecture to find relevant context from external sources and a generator component to produce text based on both the input and retrieved context. For this purpose two independent [BERT models](https://arxiv.org/abs/1810.04805) were used: An document encoder BERT and a fine-tuned query encoder BERT.
 
+$$\text{d}(z) = \text{BERT}_d(z), \quad\text{BERT}_q(x)$$
+==
  
-$$\text{d(z)= BERT}_{d}(z)$$
- 
-$$\text{q(x)= BERT}_{q}(x)$$
-
 **d(z) is a dense representation of a document produced by a [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) document encoder, and q(x) is a query representation produced by a query encoder, also based on [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased).** (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 For the generator component the authors used a encoder-decoder pre-trained seq2seq transformer, [BART-large](https://arxiv.org/abs/1910.13461).
@@ -109,6 +107,7 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
 
 $$\text{d(z)= BERT}_{d}(z)$$
+==
  
 "*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -144,8 +143,10 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT
 
 $$\text{q(x)= BERT}_{q}(x)$$
+==
 
 "*q(x) is a query representation produced by a query encoder, also based on BERT_BASE.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
 
 4. Document Retrieval: Using the encoded query/question, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.
 
@@ -159,6 +160,7 @@ $$\text{q(x)= BERT}_{q}(x)$$
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 $$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
+==
 
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
