@@ -114,7 +114,11 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*"
 
-"*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors: sim(q, p) = EQ(q)ᵀEP (p).*"
+"*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/6d4fa9a9-f692-4e16-9083-24addea98a0c)
+
+sim(q, p) = EQ(q)ᵀEP (p).*"
 
    
 4. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
