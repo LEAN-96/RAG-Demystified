@@ -173,6 +173,8 @@ $$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/2c7618e2-e244-4821-bd4c-5ea516bc0674)  == ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bf3b1814-0b2c-438b-a209-fe85d7caa879)
 
+$$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
+
 
 %3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
