@@ -150,6 +150,7 @@ Based on our query the following top-3 document chunks were retrieved:
 
 | id | x | y | chunk |
 |-----------------|-----------------|-----------------|-----------------|
+| 0 | -20.651572193624503 | 2.5121936727809024 | What is Retrieval-Augmented Generation (RAG)? |
 | 11 |- 20,372099632067037 | 2,6042801988217015 | memory with non-parametric (i.e., retrieval-based) memories [ 20,26,48] can address some of these<br>issues because knowledge can be directly revised and expanded, and accessed knowledge can be |
 | 4 |- 23,154010314955553 | 3,0623941846106097 | memory have so far been only investigated for extractive downstream tasks. We explore a general-<br>purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-<br>trained parametric and non-parametric mem- |
 | 70 |- 20,614559198905972 | 1,5474185954633568 | documents, relying primarily on non-parametric knowledge. We also compare to “Closed-Book QA”<br>approaches [ 52], which, like RAG, generate answers, but which do not exploit retrieval, instead |
