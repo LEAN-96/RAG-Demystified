@@ -29,6 +29,8 @@ Furthermore, LLMs can solve complex tasks involving multiple reasoning steps, su
 
 BERT, short for “Bidirectional Encoder Representations from Transformers,” is a transformer-based language model trained with massive datasets to understand languages like humans do. Like Word2Vec, BERT can create word embeddings from input data it was trained with. Additionally, BERT can differentiate contextual meanings of words when applied to different phrases. Therfore, it understands words not just on their own but in the context they’re used in. For example, BERT creates different embeddings for ‘play’ as in “I went to a play” and “I like to play.” 
 This makes it better than models like Word2Vec, which don’t consider the words around them. Plus, BERT can handle the position of words really well, which is important.
+BERT Transformer uses bidirectional self-attention.
+[BERTBASE](https://huggingface.co/google-bert/bert-base-uncased) (L=12, H=768, A=12, Total Parameters=110M)
 
 # Limitations of Large Language Models (LLMs):
 Despite their impressive abilities, LLMs have notable limitations, especially when applied in real-world situations. One major issue is that they sometimes generate information that is incorrect or entirely made up, which is called "hallucination." This problem becomes worse when combined with issues like bias, user privacy concerns, and security risks.
@@ -119,7 +121,9 @@ The entire index process is described as followed:
 
 "*Given a collection of M text passages, the goal of our dense passage retriever (DPR) is to index all the passages in a low-dimensional and continuous space, such that it can retrieve efﬁciently the top k passages relevant to the input question for the reader at run-time. Our dense passage retriever (DPR) uses a dense encoder EP (·) which maps any text passage to a d- dimensional real-valued vectors and builds an index for all the M passages that we will use for retrieval.*"
 
-When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space (t-SNE algorithm). For our embedding model, we also used [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 characters and a chunk overlap of 25 characters. Here's what the visualization in a 2D space looks like:
+When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we also used [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 characters and a chunk overlap of 25 characters. t-SNE algorithm is breaking down the encoded 768 dimensions of \(\text{BERT}_{d}(z)\) and BERTq(x) into a 2-dimensional space.
+
+Here's what the visualization in a 2D space looks like:
 
 ![BERT_RAG_Index_2D_t-SNE_Top3_chunk256 (1)](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b896b4ee-54ba-4827-a140-f6b5f380970b)
 
@@ -172,6 +176,22 @@ Based on our query the following top-3 document chunks were retrieved:
 
 ## Generation: 
 RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
+
+The retrieved documents are injected in a prompt and given to the generator in a JSON format:
+
+    [
+        {
+            "question": "What is Retrieval-Augmented Generation (RAG)?",
+            "answers": ["memory have so far been only investigated for extractive downstream tasks. We explore a general-<br>purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-<br>trained parametric and non-parametric mem-", "memory with non-parametric (i.e., retrieval-based) memories [ 20,26,48] can address some of these<br>issues because knowledge can be directly revised and expanded, and accessed knowledge can be", "documents, relying primarily on non-parametric knowledge. We also compare to “Closed-Book QA”<br>approaches [ 52], which, like RAG, generate answers, but which do not exploit retrieval, instead" ],
+            "ctxs": [
+                {
+                    "id": "4", "11", "70" # passage id from database tsv file
+                    "title": "RAG for Knowledge-Intensive NLP Tasks",
+                    "text": "....",
+                    "score": "...",  # retriever score
+                    "has_answer": true|false
+         },
+    ]
 
 Sources:
 
