@@ -105,6 +105,7 @@ Choosing a smaller chunk gives a clearer context, focusing on specific details. 
 
         d(z) = BERTd(z).
 
+*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*
 
 5. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
 
@@ -133,6 +134,8 @@ Retrieval in RAG involves fetching highly relevant context from a retriever. Her
 1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT
   
        q(x) = BERTq(x).
+
+"*q(x) is a query representation produced by a query encoder, also based on BERT_BASE.*"
 
 4. Document Retrieval: Using the encoded query/question, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.
 
