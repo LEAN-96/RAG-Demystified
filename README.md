@@ -60,11 +60,11 @@ In essence, RAG is like an open-book exam without studying, where the student (o
 
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence as input and produces a corresponding sequence as output. Generation-based models in an traditional seq2seq model  focus on creating text solely based on the input without looking at external sources. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input to the generator, RAG uses retrieval-based methods, which involve finding useful information from outside sources, like databases or existing texts, to help with generating text. RAG combines these two methods by using [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906) (DPR) which is based on bi-encoder architecture to find relevant context from external sources and a generator component to produce text based on both the input and retrieved context. For this purpose two independent [BERT models](https://arxiv.org/abs/1810.04805) were used: An document encoder BERT and a fine-tuned query encoder BERT.
 
+*d(z) is a dense representation of a document produced by a [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) document encoder, and q(x) is a query representation produced by a query encoder, also based on [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased).* (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
 $$\text{d}(z) = \text{BERT}_d(z), \quad\text{BERT}_q(x)$$
 ==
  
-**d(z) is a dense representation of a document produced by a [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) document encoder, and q(x) is a query representation produced by a query encoder, also based on [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased).** (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
-
 For the generator component the authors used a encoder-decoder pre-trained seq2seq transformer, [BART-large](https://arxiv.org/abs/1910.13461).
 
 Sources:
@@ -103,20 +103,16 @@ Transforming unstructured data into a format that AI models can efficiently proc
 2. Chunking: Next, we break the text into smaller pieces, kind of like cutting a big cake into slices. This helps the model handle the information better, especially since it can only process a certain amount at a time (Limited context window). Chunk size plays a role in how our system understands information. When a chunk contains multiple ideas, the semantic relationship based on the whole chunk might not precisely show the importance of the main information. This could lead to confusion or inaccurate results.
 Choosing a smaller chunk gives a clearer context, focusing on specific details. On the other hand, larger chunks include more information, but some of it might not be directly related to what the user is looking for. So, finding the right balance is key to getting accurate and relevant results.
 
-4. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. These models, also known as encoding models or **bi-encoders**, are trained on a large corpus of data, making them powerful enough to encode chunks of documents into single vector embeddings. Vector embeddings are dense representations of objects in a continuous high-dimensional vector space, capturing semantic relationships between objects through distance and direction. Referencing back to [Dense passage retriever model](https://github.com/facebookresearch/DPR) from Facebook AI, the index encoding model utilized the document encoder BERT.
+3. Encoding and Vectorization: Now comes the tricky part: turning words into numbers! We use embedding models to do this, which help our computer understand the meaning behind the words and how they're related to each other. These models, also known as encoding models or **bi-encoders**, are trained on a large corpus of data, making them powerful enough to encode chunks of documents into single vector embeddings. Vector embeddings are dense representations of objects in a continuous high-dimensional vector space, capturing semantic relationships between objects through distance and direction. Referencing back to [Dense passage retriever model](https://github.com/facebookresearch/DPR) from Facebook AI, the index encoding model utilized the document encoder BERT.
 
+"*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 $$\text{d(z)= BERT}_{d}(z)$$
 ==
  
-"*d(z) is a dense representation of a document produced by a BERT_BASE document encoder*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
-
-5. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
-
-Or in the words of the authors:
+4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
 
 "*During inference time, we apply the passage encoder EP (p) to all the passages and index them using FAISS ofﬂine. FAISS is an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
-
 
 $$\text{E}_{P}(p)$$
 ==
@@ -126,6 +122,7 @@ The entire index process is described as followed:
 
 "*Given a collection of M text passages, the goal of our dense passage retriever (DPR) is to index all the passages in a low-dimensional and continuous space, such that it can retrieve efﬁciently the top k passages relevant to the input question for the reader at run-time. Our dense passage retriever (DPR) uses a dense encoder EP (·) which maps any text passage to a d- dimensional real-valued vectors and builds an index for all the M passages that we will use for retrieval.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
+## Index Visualization
 When it comes to seeing our index in action, we rely on a handy tool called [RAGmap](https://github.com/JGalego/RAGmap). RAGmap is a simple RAG visualization tool for exploring document chunks and queries in embedding space. It enables to create a vector store and reduces high-dimensional vectors to 2D and 3D vector space. For our embedding model, we also used [BERT_BASE](https://huggingface.co/google-bert/bert-base-uncased) and indexed the original [RAG paper](http://arxiv.org/abs/2005.11401) to demonstrate how it works. Each chunk contains 256 characters and a chunk overlap of 25 characters. t-SNE algorithm is breaking down the encoded 768 dimensions of BERTd(z) and BERTq(x) into a 2-dimensional space.
 
 Here's what the visualization in a 2D space looks like:
@@ -140,15 +137,12 @@ In ordner to compare we ingested the same document with the same metrics using a
 ## Retrieval:
 Retrieval in RAG involves fetching highly relevant context from a retriever. Here is how it works:
 
-1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT
-
-$$\text{q(x)= BERT}_{q}(x)$$
-==
+1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT.
 
 "*q(x) is a query representation produced by a query encoder, also based on BERT_BASE.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
-
-2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm. This step prepares the documents for the generation process.
+$$\text{q(x)= BERT}_{q}(x)$$
+==
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
@@ -156,12 +150,12 @@ $$\text{E}_{Q}(q)$$
 ==
 $$\text{q(x)= BERT}_{q}(x)$$
 
+2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm. This step prepares the documents for the generation process.
 
 "*At run-time, DPR applies a different encoder EQ(·) that maps the input question to a d-dimensional vector, and retrieves k passages of which vectors are the closest to the question vector. We deﬁne the similarity between the question and the passage using the dot product of their vectors:*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 $$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
 ==
-
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 $$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
