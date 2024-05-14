@@ -162,6 +162,8 @@ $$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
 ==
 $$\text{sim}(q, p) = p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$$$
 
+Both formulas are about finding the best match between a question and some passages.
+
 Let's break down this formula step by step:
 ==
 This symbol represents the probability of a document z given a query x. In simple terms, it's the likelihood that a particular document matches a specific query.
@@ -187,7 +189,7 @@ $$p_{\eta}(z|x) \propto$$
 ==
 So, in simpler terms, this formula is like a way for the system to figure out which documents are most likely to match a given question. It does this by comparing how similar each document is to the question. And by doing this comparison, it can quickly find the top documents that are the best match to the query.
 
-  
+## Retrieval Visualization  
 
 ![BERT_RAG_Retrieval_2D_t-SNE_Top3_chunk256 (1)](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ff7a7f90-7834-4f75-839e-3385d85d7364)
 
