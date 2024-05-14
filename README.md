@@ -220,7 +220,6 @@ Based on our query the following top-3 document chunks were retrieved:
 In the paper for the generator BART-large , a pre-trained seq2seq transformer with 400M parameters is being used. However, any encoder-decoder can be used.
 
 
-RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -242,6 +241,12 @@ The retrieved documents are injected in a prompt and given to the generator in a
                     "has_answer": true|false
          },
     ]
+
+RAG-Token
+
+RAG-Sequence
+RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them. 
+"*We refer to this decoding procedure as “Thorough Decoding.*”
 
 Sources:
 
