@@ -209,12 +209,48 @@ Based on our query the following top-3 document chunks were retrieved:
 ## Generation: 
 In the paper for the generator BART-large , a pre-trained seq2seq transformer with 400M parameters is being used. However, any encoder-decoder can be used.
 
+$$p_{\theta}(y_i|x, z, y_{1:i-1})$$
+
 1. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
+There are 2 RAG model variants: 
+
+## RAG-Token Model
+"*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*"
+
+$$p_{\theta}(y_i|x, y_{1:i-1}) = \sum_{z \in \text{top-k}(p(\cdot|x))} p_{\eta}(z_i|x) p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
+==
+
+"*To decode, we can plug p′θ(yi|x, y1:i−1) into a standard beam decoder.*"
+
+$$p_{\theta}(y_i|x, z, y_{1:i-1})$$
+
+Let's break down this formula step by step:
+
+This part represents the probability of generating the next token yi in the sequence given the input x and the tokens generated so far  y 1:i−1. It's like predicting the next word in a sentence based on what came before it.
+
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
+
+This part is about selecting the top k documents z that are most relevant to the input x. These documents are chosen based on their probability of being relevant (p(⋅∣x))
+
+$$\sum_{z \in \text{top-k}}(p(\cdot|x))$$
+==
+
+This represents the probability of selecting each document zi from the top k documents given the input x. It's like determining how likely each document is to be relevant to the input.
+
+$$p_{\eta}(z_i|x)$$
+==
+
+This part is about generating the next token yi in the sequence based on the input x, the selected document zi  , and the tokens generated so far y1:i-1. It's like predicting the next word in the sentence, but also considering information from the selected document.
+
+$$p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
+==
+
+This formula describes how the RAG-Token model generates text. It first selects the most relevant documents based on the input, then uses those documents to help generate the next token in the sequence. Finally, it combines information from the input, the selected document, and the tokens generated so far to predict the next word in the sentence.
+
 
 The retrieved documents are injected in a prompt and given to the generator in a JSON format:
 
@@ -232,9 +268,9 @@ The retrieved documents are injected in a prompt and given to the generator in a
          },
     ]
 
-RAG-Token
 
-RAG-Sequence
+
+RAG-Sequence Model 
 "*RAG employs a form of late fusion to integrate knowledge from all retrieved documents, meaning it makes individual answer predictions for document-question pairs and then aggregates the final prediction scores. Critically, using late fusion allows us to back-propagate error signals in the output to the retrieval mechanism, which can substantially improve the performance of the end-to-end system.*" (Lewis P, Riedel S, Kiela D, Piktus A [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/))
 
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
