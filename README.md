@@ -148,7 +148,7 @@ $$\text{q(x)= BERT}_{q}(x)$$
 "*q(x) is a query representation produced by a query encoder, also based on BERT_BASE.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 
-4. Document Retrieval: Using the encoded query/question, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.
+2. Document Retrieval: Using the encoded query/question, the system searches a large corpus of information to retrieve relevant documents or passages. This is done using a dense retrieval method, which efficiently fetches the most relevant pieces of information. This search, also called vector search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the vectors of chunks. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.
 
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
@@ -167,6 +167,35 @@ $$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
 $$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
 ==
 $$\text{sim}(q, p) = p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$$$
+
+Let's break down this formula step by step:
+==
+This symbol represents the probability of a document z given a query x. In simple terms, it's the likelihood that a particular document matches a specific query.
+
+$$p_{\eta}(z|x)$$
+==
+
+It's a way to represent the document's content in a dense format.
+
+$$\text{d}(z)$$
+==
+Similarly, this represents the query in a dense format. It's also encoded into a format that the system can understand easily.
+ 
+$$\text{q}(x)$$
+==
+This part calculates how similar the document's representation d(z) is to the query's representation q(x). Think of it like comparing two pictures to see how much they look alike.
+
+$$\\exp(d(z)^{\top}q(x))$$
+==
+This symbol tells us that the probability of a document given a query is proportional to the similarity between the document and the query. In other words, the more similar they are, the higher the probability that the document is relevant to the query.
+
+$$p_{\eta}(z|x) \propto$$
+==
+So, in simpler terms, this formula is like a way for the system to figure out which documents are most likely to match a given question. It does this by comparing how similar each document is to the question. And by doing this comparison, it can quickly find the top documents that are the best match to the query.
+
+
+
+
 
 %3. Context Encoding: The retrieved documents are then encoded, similar to how the original query was encoded. This step prepares the documents for the generation process.
   
@@ -188,7 +217,15 @@ Based on our query the following top-3 document chunks were retrieved:
 
 
 ## Generation: 
+In the paper for the generator BART-large , a pre-trained seq2seq transformer with 400M parameters is being used. However, any encoder-decoder can be used.
+
+
 RAG uses a method called late fusion to combine information from all the documents it finds. It first predicts answers for each pair of document and question. Late fusion means that it combines all these predictions to come up with a final answer. This method is beneficial because it helps improve the overall performance of the system by allowing it to learn from its mistakes and correct them.
+
+"*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
+$$p_{\theta}(y_i|x, z, y_{1:i-1})$$
+==
 
 The retrieved documents are injected in a prompt and given to the generator in a JSON format:
 
