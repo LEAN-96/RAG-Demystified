@@ -40,7 +40,8 @@ Another important limitation is that LLMs have a fixed amount of knowledge (Para
 Additionally, LLMs have technical restrictions, such as limits on the amount of text they can process at once (Token limits). This can affect their ability to handle large blocks of text and may make it harder to scale their use for bigger projects. 
 
 Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network
-Non-Parametric knowledge = 22 million * 100 words sample (encoded chunks) from wikipedia
+
+Non-Parametric knowledge = Index 22 million * 100 encoded words chunks from wikipedia
 
 # Introduction to RAG:
 
