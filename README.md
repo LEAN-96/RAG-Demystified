@@ -290,6 +290,29 @@ RAG-Sequence Model
 
 $$p_{\text{RAG-Sequence}}(y|x) \approx \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) p_θ(y|x, z) = \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) \prod_{i}^N p_θ(y_i | x, z, y_{1:i-1})$$
 
+## Lets break it down again:
+
+This represents the probability of generating the sequence ( y ) given the input ( x )
+
+$$p_{\text{RAG-Sequence}}(y|x)$$
+==
+This sums over the top-k relevant documents ( z ) retrieved based on the input ( x )
+
+$$\sum_{z \in \text{top-k}(p(z|x))}$$
+==
+This is the probability of retrieving document ( z ) given the input ( x )
+
+$$p_n(z|x)$$
+==
+This is the probability of generating the sequence ( y ) given the input ( x ) and the retrieved document ( z )
+
+$$p_{\theta}(y|x, z)$$
+==
+This is the product of probabilities of generating each token ( y_i ) in the sequence ( y ), given the input ( x ), the retrieved document ( z ), and the previously generated tokens ( y_{1:i-1}
+
+$$\prod_{i=1}^{N} p_{\theta}(y_i | x, z, y_{1:i-1})$$
+
+
 
 Sources:
 
