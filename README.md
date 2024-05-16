@@ -198,6 +198,9 @@ $$p_{\eta}(z|x) \propto$$
 ==
 So, in simpler terms, this formula is like a way for the system to figure out which documents are most likely to match a given question. It does this by comparing how similar each document is to the question. And by doing this comparison, it can quickly find the top documents that are the best match to the query.
 
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b77511bb-85c4-49d5-844c-948995dd8c2a)
+[Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
+
 ## Retrieval Visualization  
 
 ![BERT_RAG_Retrieval_2D_t-SNE_Top3_chunk256 (1)](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ff7a7f90-7834-4f75-839e-3385d85d7364)
