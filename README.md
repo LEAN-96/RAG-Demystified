@@ -179,7 +179,14 @@ This symbol represents the probability of a document z given a query x. In simpl
 
 $$p_{\eta}(z|x)$$
 ==
+This symbol tells us that the probability of a document given a query is proportional to the similarity between the document and the query. In other words, the more similar they are, the higher the probability that the document is relevant to the query.
 
+$$p_{\eta}(z|x) \propto$$
+==
+This part calculates how similar the document's representation d(z) is to the query's representation q(x). Think of it like comparing two pictures to see how much they look alike.
+
+$$\\exp(d(z)^{\top}q(x))$$
+==
 It's a way to represent the document's content in a dense format.
 
 $$\text{d}(z)$$
@@ -188,14 +195,7 @@ Similarly, this represents the query in a dense format. It's also encoded into a
  
 $$\text{q}(x)$$
 ==
-This part calculates how similar the document's representation d(z) is to the query's representation q(x). Think of it like comparing two pictures to see how much they look alike.
 
-$$\\exp(d(z)^{\top}q(x))$$
-==
-This symbol tells us that the probability of a document given a query is proportional to the similarity between the document and the query. In other words, the more similar they are, the higher the probability that the document is relevant to the query.
-
-$$p_{\eta}(z|x) \propto$$
-==
 So, in simpler terms, this formula is like a way for the system to figure out which documents are most likely to match a given question. It does this by comparing how similar each document is to the question. And by doing this comparison, it can quickly find the top documents that are the best match to the query.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b77511bb-85c4-49d5-844c-948995dd8c2a)
