@@ -194,9 +194,6 @@ $$\text{q}(x)$$
 
 So, in simpler terms, this formula is like a way for the system to figure out which documents are most likely to match a given question. It does this by comparing how similar each document is to the question. And by doing this comparison, it can quickly find the top documents that are the best match to the query.
 
-The formulas we learned so far for indexing and retrieval visualized:
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b77511bb-85c4-49d5-844c-948995dd8c2a)
-[Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ## Retrieval Visualization  
 
@@ -213,7 +210,9 @@ Based on our query the following top-3 document chunks were retrieved:
 
 ![RAG_Retrieval_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c1fe9d3d-1151-4151-9c30-3b893fb1eae0)
 
-
+Before we jump to the generation phase a short visualized recap about the formulas we learned so far for indexing and retrieval:
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b77511bb-85c4-49d5-844c-948995dd8c2a)
+[Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ## Generation: 
 In the paper for the generator BART-large , a pre-trained seq2seq transformer with 400M parameters is being used. However, any encoder-decoder can be used.
