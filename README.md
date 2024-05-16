@@ -224,15 +224,17 @@ $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
-There are 2 RAG model variants: 
+The authors propose two RAG model variants to decode from this set of latent documents: 
 
 ## RAG-Token Model
-"*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*"
+"*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
 
 $$p_{\theta}(y_i|x, y_{1:i-1}) = \sum_{z \in \text{top-k}(p(\cdot|x))} p_{\eta}(z_i|x) p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
 ==
 
-"*To decode, we can plug p′θ(yi|x, y1:i−1) into a standard beam decoder.*"
+"*To decode, we can plug p′θ(yi|x, y1:i−1) into a standard beam decoder.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
 
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
