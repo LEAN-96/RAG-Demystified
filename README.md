@@ -312,6 +312,7 @@ This is the product of probabilities of generating each token ( y_i ) in the seq
 
 $$\prod_{i=1}^{N} p_{\theta}(y_i | x, z, y_{1:i-1})$$
 
+It takes one latent document z and generates and entire sequence y. This is done for all the retrieved documents z. Later on it tries to multiply together the probablities of those entire sequences to generate the final output sequence y. Each of these probabilities is weigthed by the parameters of the BART model (p θ) as well as the similarity that is determined the prior probability on that document which was retrieved.
 
 
 Sources:
