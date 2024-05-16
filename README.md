@@ -175,11 +175,7 @@ Both formulas are about finding the best match between a question and some passa
 
 Let's break down this formula step by step:
 ==
-This symbol represents the probability of a document z given a query x. In simple terms, it's the likelihood that a particular document matches a specific query.
-
-$$p_{\eta}(z|x)$$
-==
-This symbol tells us that the probability of a document given a query is proportional to the similarity between the document and the query. In other words, the more similar they are, the higher the probability that the document is relevant to the query.
+This symbol tells us that the probability of a document z given a query x is proportional to the similarity between the document and the query. In other words, the more similar they are, the higher the probability that the document is relevant to the query.
 
 $$p_{\eta}(z|x) \propto$$
 ==
