@@ -223,6 +223,22 @@ $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
+The retrieved documents are injected in a prompt and given to the generator in a JSON format:
+
+    [
+        {
+            "question": "What is Retrieval-Augmented Generation (RAG)?",
+            "answers": ["memory have so far been only investigated for extractive downstream tasks. We explore a general-<br>purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-<br>trained parametric and non-parametric mem-", "memory with non-parametric (i.e., retrieval-based) memories [ 20,26,48] can address some of these<br>issues because knowledge can be directly revised and expanded, and accessed knowledge can be", "documents, relying primarily on non-parametric knowledge. We also compare to “Closed-Book QA”<br>approaches [ 52], which, like RAG, generate answers, but which do not exploit retrieval, instead" ],
+            "ctxs": [
+                {
+                    "id": "4", "11", "70" # passage id from database tsv file
+                    "title": "RAG for Knowledge-Intensive NLP Tasks",
+                    "text": "....",
+                    "score": "...",  # retriever score
+                    "has_answer": true|false
+         },
+    ]
+
 The authors propose two RAG model variants to decode from this set of latent documents: 
 
 ## RAG-Token Model
@@ -267,23 +283,6 @@ $$p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
 ==
 
 This formula describes how the RAG-Token model generates text. It first selects the most relevant documents based on the input, then uses those documents to help generate the next token in the sequence. Finally, it combines information from the input, the selected document, and the tokens generated so far to predict the next word in the sentence.
-
-
-The retrieved documents are injected in a prompt and given to the generator in a JSON format:
-
-    [
-        {
-            "question": "What is Retrieval-Augmented Generation (RAG)?",
-            "answers": ["memory have so far been only investigated for extractive downstream tasks. We explore a general-<br>purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-<br>trained parametric and non-parametric mem-", "memory with non-parametric (i.e., retrieval-based) memories [ 20,26,48] can address some of these<br>issues because knowledge can be directly revised and expanded, and accessed knowledge can be", "documents, relying primarily on non-parametric knowledge. We also compare to “Closed-Book QA”<br>approaches [ 52], which, like RAG, generate answers, but which do not exploit retrieval, instead" ],
-            "ctxs": [
-                {
-                    "id": "4", "11", "70" # passage id from database tsv file
-                    "title": "RAG for Knowledge-Intensive NLP Tasks",
-                    "text": "....",
-                    "score": "...",  # retriever score
-                    "has_answer": true|false
-         },
-    ]
 
 
 
