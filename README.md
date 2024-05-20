@@ -240,6 +240,10 @@ $$p_{\text{RAG-Token}}(y|x) \approx \prod_{i}^N \sum_{z \in \text{top-k}(p(⋅|x
 
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
+Instead of picking one document and generating the entire answer from it, the RAG-Token model does something smarter. For each word (or token) in the answer, it looks at multiple documents to decide the best word to use next. Imagine you are writing an answer word by word. For the first word, the model considers all K documents and decides the best word based on the information from all of them.
+After choosing the first word, it repeats the process for the second word, again considering the top K documents to pick the best one. For each word, the model creates a distribution (a set of possible words) from each document. It then combines these distributions to decide the final word. This process, known as marginalizing, ensures the answer is well-informed by considering all the retrieved documents. This method allows the model to draw information from different sources for each word, making the answer more comprehensive and accurate. It doesn't rely on just one document for the entire answer but uses multiple documents dynamically for each step.
+
+
 Let's break down this formula step by step:
 
 This part represents the probability of generating the next token yi in the sequence given the input x and the tokens generated so far  y 1:i−1. It's like predicting the next word in a sentence based on what came before it.
