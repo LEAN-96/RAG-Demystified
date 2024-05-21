@@ -293,7 +293,7 @@ This formula describes how the RAG-Token model generates text. It first selects 
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
-These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
+These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
 
 $$p_{\text{RAG-Sequence}}(y|x) \approx \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) p_θ(y|x, z) = \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) \prod_{i}^N p_θ(y_i | x, z, y_{1:i-1})$$
 
@@ -308,19 +308,19 @@ This sums over the top-k relevant documents ( z ) retrieved based on the input (
 
 $$\sum_{z \in \text{top-k}(p(z|x))}$$
 ==
-This is the probability of retrieving document ( z ) given the input ( x )
+This term represents the probability that a document ( z )is relevant to the input ( 𝑥 ). It tells us how likely each document is to contain the information we need.
+x
 
 $$p_n(z|x)$$
 ==
-This is the probability of generating the sequence ( y ) given the input ( x ) and the retrieved document ( z )
+This term represents the probability of generating the entire sequence ( 𝑦 ) given the input ( 𝑥 ) and the retrieved document ( 𝑧 ). It captures how well the document ( z ) helps in generating the answer.
 
 $$p_{\theta}(y|x, z)$$
 ==
-This is the product of probabilities of generating each token ( y_i ) in the sequence ( y ), given the input ( x ), the retrieved document ( z ), and the previously generated tokens ( y_{1:i-1}
+Here, ( 𝑦 ) is broken down into individual tokens (words or characters). For each token ( 𝑦𝑖 ) in the sequence, we calculate its probability given the input ( 𝑥 ), the document ( 𝑧 ), and all the previous tokens 
+𝑦1:𝑖−1. We multiply these probabilities together to get the overall probability for the sequence. Each of these probabilities is weigthed by the parameters of the BART model (p θ) as well as the similarity that is determined the prior probability on that document which was retrieved.
 
 $$\prod_{i=1}^{N} p_{\theta}(y_i | x, z, y_{1:i-1})$$
-
-It takes one latent document z and generates and entire sequence y. This is done for all the retrieved documents z. Later on it tries to multiply together the probablities of those entire sequences to generate the final output sequence y. Each of these probabilities is weigthed by the parameters of the BART model (p θ) as well as the similarity that is determined the prior probability on that document which was retrieved.
 
 
 Sources:
