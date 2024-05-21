@@ -292,7 +292,11 @@ This formula describes how the RAG-Token model generates text. It first selects 
 
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
+Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
+These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
+
 $$p_{\text{RAG-Sequence}}(y|x) \approx \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) p_θ(y|x, z) = \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) \prod_{i}^N p_θ(y_i | x, z, y_{1:i-1})$$
+
 
 ## Lets break it down again:
 
