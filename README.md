@@ -223,6 +223,11 @@ $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
+"*To decode, we can plug p′θ(yi|x, y1:i−1) into a standard beam decoder.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
+$$p_{\theta}(y_i|x, z, y_{1:i-1})$$
+==
+
 The retrieved documents are injected in a prompt and given to the generator in a JSON format:
 
     [
@@ -245,9 +250,6 @@ The authors propose two RAG model variants to decode from this set of latent doc
 "*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
 
-$$p_{\theta}(y_i|x, y_{1:i-1}) = \sum_{z \in \text{top-k}(p(⋅|x))} p_{\eta}(z_i|x) p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
-
-==
 $$p_{\text{RAG-Token}}(y|x) \approx \prod_{i}^N \sum_{z \in \text{top-k}(p(⋅|x))} p_{\eta}(z|x) p_{\theta}(y_i | x, z, y_{1:i-1}) ]$$
 ==
 
@@ -258,29 +260,31 @@ After choosing the first word, it repeats the process for the second word, again
 
 Let's break down this formula step by step:
 
-This part represents the probability of generating the next token yi in the sequence given the input x and the tokens generated so far  y 1:i−1. It's like predicting the next word in a sentence based on what came before it.
+The formula calculates the probability of generating a sequence of words 𝑦 given an input 𝑥.
 
-"*To decode, we can plug p′θ(yi|x, y1:i−1) into a standard beam decoder.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
-
-$$p_{\theta}(y_i|x, z, y_{1:i-1})$$
+$$p_{\text{RAG-Token}}(y|x)$$
 ==
 
-This part is about selecting the top k documents z that are most relevant to the input x. These documents are chosen based on their probability of being relevant (p(⋅∣x))
+This product notation indicates that we are going to perform the following steps for each token 𝑦𝑖 in the sequence. Here, 𝑖 ranges from 1 to 𝑁, where 𝑁 is the length of the sequence.
 
-$$\sum_{z \in \text{top-k}}(p(\cdot|x))$$
+$$\approx \prod_{i}^N$$
+==
+For each token 𝑦𝑖, we sum over the probabilities for each of the top K documents 𝑧. This means we consider each document's contribution to generating the current token.
+
+$$\sum_{z \in \text{top-k}(p(z|x))}$$
 ==
 
-This represents the probability of selecting each document zi from the top k documents given the input x. It's like determining how likely each document is to be relevant to the input.
+This term represents the probability that a document 𝑧 is relevant to the input 𝑥. It tells us how likely each document is to contain the information we need.
 
-$$p_{\eta}(z_i|x)$$
+$$p_n(z|x)$$
 ==
-
-This part is about generating the next token yi in the sequence based on the input x, the selected document zi  , and the tokens generated so far y1:i-1. It's like predicting the next word in the sentence, but also considering information from the selected document.
+This term represents the probability of generating the token 𝑦𝑖 given the input 𝑥, the document 𝑧, and all the previous tokens 𝑦1:𝑖−1. This captures how well the document 𝑧 helps in generating the current token.
 
 $$p_{\theta}(y_i|x, z_i, y_{1:i-1})$$
 ==
 
-This formula describes how the RAG-Token model generates text. It first selects the most relevant documents based on the input, then uses those documents to help generate the next token in the sequence. Finally, it combines information from the input, the selected document, and the tokens generated so far to predict the next word in the sentence.
+This process allows the RAG-Token model to effectively combine retrieval and generation on a token-by-token basis.
+
 
 
 
@@ -298,24 +302,24 @@ $$p_{\text{RAG-Sequence}}(y|x) \approx \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z
 
 ## Lets break it down again:
 
-This represents the probability of generating the sequence ( y ) given the input ( x )
+This represents the probability of generating the sequence y  given the input 𝑥
 
 $$p_{\text{RAG-Sequence}}(y|x)$$
 ==
-This sums over the top-k relevant documents ( z ) retrieved based on the input ( x )
+This sums over the top-k relevant documents 𝑧 retrieved based on the input 𝑥
 
 $$\sum_{z \in \text{top-k}(p(z|x))}$$
 ==
-This term represents the probability that a document ( z )is relevant to the input ( 𝑥 ). It tells us how likely each document is to contain the information we need.
-x
+This term represents the probability that a document 𝑧 is relevant to the input 𝑥. It tells us how likely each document is to contain the information we need.
+
 
 $$p_n(z|x)$$
 ==
-This term represents the probability of generating the entire sequence ( 𝑦 ) given the input ( 𝑥 ) and the retrieved document ( 𝑧 ). It captures how well the document ( z ) helps in generating the answer.
+This term represents the probability of generating the entire sequence ( 𝑦 ) given the input 𝑥 and the retrieved document 𝑧. It captures how well the document 𝑧 helps in generating the answer.
 
 $$p_{\theta}(y|x, z)$$
 ==
-Here, ( 𝑦 ) is broken down into individual tokens (words or characters). For each token ( 𝑦𝑖 ) in the sequence, we calculate its probability given the input ( 𝑥 ), the document ( 𝑧 ), and all the previous tokens 
+Here, ( 𝑦 ) is broken down into individual tokens (words or characters). For each token ( 𝑦𝑖 ) in the sequence, we calculate its probability given the input 𝑥, the document 𝑧, and all the previous tokens 
 𝑦1:𝑖−1. We multiply these probabilities together to get the overall probability for the sequence. Each of these probabilities is weigthed by the parameters of the BART model (p θ) as well as the similarity that is determined the prior probability on that document which was retrieved.
 
 $$\prod_{i=1}^{N} p_{\theta}(y_i | x, z, y_{1:i-1})$$
