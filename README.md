@@ -215,7 +215,7 @@ Before we jump to the generation phase a short visualized recap about the formul
 [Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ## Generation: 
-In the paper for the generator BART-large , a pre-trained seq2seq transformer with 400M parameters is being used. However, for applying RAG any generator (encoder-decoder, decoder only) can be utilzed.
+In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters is being used. However, for applying RAG any generator (encoder-decoder, decoder only) can be utilzed.
 
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
