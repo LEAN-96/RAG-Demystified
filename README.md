@@ -274,7 +274,7 @@ For each token 𝑦𝑖, we sum over the probabilities for each of the top K doc
 $$\sum_{z \in \text{top-k}(p(z|x))}$$
 ==
 
-This term represents the probability that a document 𝑧 is relevant to the input 𝑥. It tells us how likely each document is to contain the information we need.
+This term represents the probability that a document 𝑧 is relevant to the input 𝑥. It tells us how likely each document is to contain the information we need. This document probability is derived from the retrieval score of the document.
 
 $$p_n(z|x)$$
 ==
@@ -315,7 +315,8 @@ This term represents the probability that a document 𝑧 is relevant to the inp
 
 $$p_n(z|x)$$
 ==
-This term represents the probability of generating the entire sequence ( 𝑦 ) given the input 𝑥 and the retrieved document 𝑧. It captures how well the document 𝑧 helps in generating the answer.
+This term represents the probability of generating the entire sequence ( 𝑦 ) given the input 𝑥 and the retrieved document 𝑧. It captures how well the document 𝑧 helps in generating the answer. This document probability is derived from the retrieval score of the document.
+
 
 $$p_{\theta}(y|x, z)$$
 ==
