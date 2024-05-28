@@ -32,6 +32,10 @@ This makes it better than models like Word2Vec, which don’t consider the words
 BERT Transformer uses bidirectional self-attention.
 [BERTBASE](https://huggingface.co/google-bert/bert-base-uncased) (L=12, H=768, A=12, Total Parameters=110M)
 
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c6e84a86-a548-4b86-b2a6-a83d3c4290f9)
+[Figure](https://towardsdatascience.com/a-complete-guide-to-bert-with-code-9f87602e4a11)
+
+
 # Limitations of Large Language Models (LLMs):
 Despite their impressive abilities, LLMs have notable limitations, especially when applied in real-world situations. One major issue is that they sometimes generate information that is incorrect or entirely made up, which is called "hallucination." This problem becomes worse when combined with issues like bias, user privacy concerns, and security risks. Moreover, LLMs acting as "black box" meaning we cannot provide insight into their predictions.
 
