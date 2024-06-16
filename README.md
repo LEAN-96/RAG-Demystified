@@ -423,7 +423,7 @@ Recent studies shows the shift towards visual RAG approaches.
 | [DSPy](https://github.com/stanfordnlp/dspy) | [Create-TSI](https://github.com/telekom/create-tsi)  | [RAGTune](https://github.com/misbahsy/RAGTune) | |
 | [Cognita](https://github.com/truefoundry/cognita) |[Verta](https://www.verta.ai/rag)  |[Lunary](https://lunary.ai/) | 
 |  | [Quivr](https://docs.quivr.app/intro) | [DeepEval](https://github.com/confident-ai/deepeval) |  |
-|  | [RAGapp](https://github.com/ragapp/ragapp) |  |  |
+|  | [RAGapp](https://github.com/ragapp/ragapp) | [Trulens](https://www.trulens.org/) |  |
 
 ## LLM Stack
 
