@@ -21,17 +21,17 @@ LLMs are not just static tools; they exhibit remarkable emergent abilities. This
 
 1. Instruction Following:
 
-Explanation: LLMs can follow given instructions well during inference (when they are generating outputs).
+LLMs can follow given instructions well during inference (when they are generating outputs).
 Example: If you ask an LLM to write a story in the style of a famous author, it can produce a surprisingly accurate piece even if it wasn't specifically trained for that task.
 
 2. In-Context Learning:
 
-Explanation: LLMs can refine their responses based on the context provided within the prompt itself. This helps them produce more relevant and coherent outputs.
+LLMs can refine their responses based on the context provided within the prompt itself. This helps them produce more relevant and coherent outputs.
 Example: When given a few examples of a specific task within the prompt, like translating sentences, the model can learn and apply the pattern immediately.
 
-3.Step-by-Step Reasoning:
+3. Step-by-Step Reasoning:
 
-Explanation: LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems.
+LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems.
 Example: Through techniques like chain-of-thought prompting, LLMs can break down and solve problems that require several logical steps.
 
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
