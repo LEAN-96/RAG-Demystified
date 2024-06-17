@@ -91,21 +91,14 @@ Fine-Tuning is like a student who, after attending general school, decides to sp
 For LLMs, fine-tuning involves taking the pre-trained model and training it further on a smaller, task-specific dataset. This process helps the model adapt its general knowledge to perform well on specific tasks, such as answering questions about medical information or generating code. Fine-tuning adjusts the model's parameters to better suit the particular requirements of the task at hand. Although, fine-tuning is a good approach to optimize LLMs for a specific task, it can be very resource intensive and time consuming.
 
 ## Prompt Engineering 
-**What is a Prompt?**
 
-A prompt is like a question or a set of instructions you give to an AI model to get a specific response.
+A prompt is like a question or a set of instructions you give to an AI model to get a specific response. Prompt engineering is the art of crafting these questions or instructions to get better and more accurate answers from the AI. It involves minimal changes to the model and external information, concentrating on leveraging the inherent capabilities of LLMs.
 
-**What is Prompt Engineering?**
-Prompt engineering is the art of crafting these questions or instructions to get better and more accurate answers from the AI. It involves minimal changes to the model and external information, concentrating on leveraging the inherent capabilities of LLMs.
-
-**How Does It Work?**
 Think of prompt engineering as giving directions. There are various techniques to structure these prompts. Some might involve clear, step-by-step instructions, while others might use examples to illustrate what you mean. Sometimes, these techniques can get quite sophisticated, involving conditional steps or branching paths.
 
-**Why is Context Important?**
 Providing clear and specific prompts helps the AI understand exactly what you want. This context can be given in various ways, such as by including examples or detailed instructions within the prompt itself.
 
-**What's In-Context Learning (ICL)?**
-In-Context Learning (ICL) means teaching the AI by giving it examples or instructions directly in the prompt, without having to retrain it.
+In-Context Learning (ICL) is a technique where the model is taught by providing examples or instructions directly within the prompt. This method allows the model to learn and adapt to specific tasks without the need for additional training. ICL can be particularly useful for tasks that require the model to understand and replicate specific patterns or formats.
 Giving the model examples is referred as Shot Prompting.
 One-Shot Prompting: You give the AI one example to help it understand what you want.
 Few-Shot Prompting: You give the AI a few examples to make things even clearer.
@@ -113,7 +106,8 @@ These examples are included in the prompt to provide the necessary context, help
 
 **Want to Learn More?**
 For a deeper dive into prompt engineering and different prompting techniques, you can check out detailed resources and research papers on the topic.
-[Source](https://arxiv.org/pdf/2406.06608): Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
+[Source](https://arxiv.org/pdf/2406.06608): 
+Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
 
 
 
