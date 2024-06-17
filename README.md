@@ -127,7 +127,7 @@ Think of a pre-trained Large Language Model (LLM) as a closed-book exam where th
 
 ![RAG_Analogy](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/92b40321-be9d-44c0-9c25-96900ad67ef4)
 
-*Spoiler: The following terms and explaination are based on the [original paper](http://arxiv.org/abs/2005.11401) released by a research team from Facebook AI*
+*Spoiler: The following terms, formulas and explaination are based on the [original RAG paper](http://arxiv.org/abs/2005.11401) [DPR paper](https://arxiv.org/abs/2004.04906) released by a research team from Facebook AI*
 
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence x as input and produces a corresponding sequence y as output. Generation-based models in an traditional seq2seq model or LLMs focus on creating text solely based on the input x without looking at external sources to produce output y. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input x to the generator, RAG uses retrieval-based methods, which involve finding useful information from document z, like databases, to help with generating text. 
 
@@ -168,8 +168,11 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 
 ![RAG_Updated](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/4ed80cc8-388c-44db-87d9-547cdb8fb757)
 
+*The following description of the RAG-process is taken from a [survey](http://arxiv.org/abs/2312.10997) and the terminilogy with citatations from the original papers is applied to it.*
 
-The basic RAG process involves indexing, retrieval, and generation. In simple terms, a user's input x is used to search for relevant documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt. The entire RAG-Process is often referred as "RAG-Pipeline".
+The basic RAG process involves indexing, retrieval, and generation. 
+
+In simple terms, a user's input x is used to search for relevant documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt. The entire RAG-Process is often referred as "RAG-Pipeline".
 
 
 ## Indexing:
