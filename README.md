@@ -15,17 +15,28 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 # Fundamentals of Large Language Models (LLMs):
 
-Large Language Models (LLMs) are not just static tools but exhibit remarkable emergent abilities. When we talk about emergent abilities we're referring to the unexpected talents or skills these models demonstrate as they interact with users or tasks. These capabilities can sometimes surprise us, showing functionalities that weren't explicitly programmed into the model. LLMs demonstrate various emergent abilities, such as instruction following, in-context learning and step-by-step reasoning. These capabilities include problem-solving, where LLMs provide insightful solutions to tasks they weren't trained on, adaptation to user inputs, and contextual understanding.
+Large Language Models (LLMs) refer to advanced types of AI models, typically based on Transformer architectures, that have hundreds of billions (or more) parameters. These models are trained on vast amounts of text data, examples being GPT-3, PaLM, Galactica, and LLaMA. LLMs have impressive capabilities in understanding natural language and solving complex tasks through text generation.
 
-LLMs perform well when given instructions during inference, and they excel when provided with contextual reference data. They prioritize contextual knowledge over data they've been trained on, leading to more accurate responses.
+LLMs are not just static tools; they exhibit remarkable emergent abilities. This means that as these models interact with users and tasks, they demonstrate unexpected skills or talents that weren't explicitly programmed. Here are some key emergent abilities:
 
-In-context learning is another important ability, allowing LLMs to refine their responses based on specific contexts. This enhances the relevance and coherence of their outputs.
+1. Instruction Following:
 
-The emergence of these abilities distinguishes LLMs from smaller models. For example, LLMs like GPT-3 exhibit strong in-context learning abilities, allowing them to generate expected outputs without additional training. They can also follow instructions for new tasks without explicit examples, improving their generalization ability.
+Explanation: LLMs can follow given instructions well during inference (when they are generating outputs).
+Example: If you ask an LLM to write a story in the style of a famous author, it can produce a surprisingly accurate piece even if it wasn't specifically trained for that task.
 
-Furthermore, LLMs can solve complex tasks involving multiple reasoning steps, such as mathematical word problems, through strategies like the chain-of-thought prompting. This ability, along with others, emerges as LLMs scale up in size, contributing to their performance gains. Overall, emergent abilities in LLMs showcase their adaptability and intelligence, making them versatile tools for various tasks and applications. [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
+2. In-Context Learning:
 
-# Introduction to Transformers:
+Explanation: LLMs can refine their responses based on the context provided within the prompt itself. This helps them produce more relevant and coherent outputs.
+Example: When given a few examples of a specific task within the prompt, like translating sentences, the model can learn and apply the pattern immediately.
+
+3.Step-by-Step Reasoning:
+
+Explanation: LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems.
+Example: Through techniques like chain-of-thought prompting, LLMs can break down and solve problems that require several logical steps.
+
+[A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
+
+# LLM Architecture: Transformer
 
 BERT, short for “Bidirectional Encoder Representations from Transformers,” is a transformer-based language model trained with massive datasets to understand languages like humans do. Like Word2Vec, BERT can create word embeddings from input data it was trained with. Additionally, BERT can differentiate contextual meanings of words when applied to different phrases. Therfore, it understands words not just on their own but in the context they’re used in. For example, BERT creates different embeddings for ‘play’ as in “I went to a play” and “I like to play.” 
 This makes it better than models like Word2Vec, which don’t consider the words around them. Plus, BERT can handle the position of words really well, which is important.
@@ -38,11 +49,28 @@ BERT Transformer uses bidirectional self-attention.
 
 
 # Limitations of Large Language Models (LLMs):
-Despite their impressive abilities, LLMs have notable limitations, especially when applied in real-world situations. One major issue is that they sometimes generate information that is incorrect or entirely made up, which is called "hallucination." This problem becomes worse when combined with issues like bias, user privacy concerns, and security risks. Moreover, LLMs acting as "black box" meaning we cannot provide insight into their predictions.
 
-Another important limitation is that LLMs have a fixed amount of knowledge (Parametric memory). They only know what they learned during their training and can't adapt to new information. This makes them less effective in tasks that require the latest and most detailed knowledge, especially in specialized areas. In practical terms, this might mean they produce irrelevant or even harmful content. Expanding the LLM´s memory through fine-tuning is expensive and resource-intensive.
+While Large Language Models (LLMs) are powerful tools, they come with several important limitations:
 
-Additionally, LLMs have technical restrictions, such as limits on the amount of text they can process at once (Token limits). This can affect their ability to handle large blocks of text and may make it harder to scale their use for bigger projects. 
+1. Hallucinations and Truthfulness
+LLMs can sometimes generate information that is incorrect or entirely made up, a phenomenon known as "hallucination." This issue becomes more problematic when combined with other concerns like bias, user privacy, and security risks. Moreover, LLMs act as "black boxes," meaning we can't easily understand how they make their predictions. Because LLMs do not have a notion of "truth" and are often trained on a mix of reliable and unreliable content, they can produce very plausible but incorrect answers.
+
+2. Fixed Knowledge
+LLMs have a fixed amount of knowledge based on what they learned during their training (known as parametric memory). They can't adapt to new information, making them less effective for tasks requiring the latest or highly detailed knowledge, especially in specialized fields. This limitation can lead to irrelevant or even harmful content. Expanding an LLM's knowledge through fine-tuning is expensive and resource-intensive.
+
+3. Technical Restrictions
+LLMs have technical limitations, such as the amount of text they can process at once (token limits). This affects their ability to handle large blocks of text, making it challenging to use them for bigger projects.
+
+4. Lack of State/Memory
+LLMs do not have memory or state. They cannot remember information from previous prompts, which is a significant limitation for applications that require continuity or context over multiple interactions.
+
+5. Stochastic Nature
+LLMs are stochastic or probabilistic. Sending the same prompt multiple times can yield different responses each time. While parameters like "temperature" can limit this variability, it remains an inherent property of their training.
+
+6. Resource-Intensive
+LLMs are generally very large, requiring many costly GPU machines for training and serving. This size can also lead to poor service level agreements (SLAs), particularly in terms of latency.
+
+[Large Language Models: A Survey](https://arxiv.org/html/2402.06196v2#S4)
 
 # Improving LLMs output
 There are four approaches to enhance the output of LLM´s, where each of them ranges from easy and cheap to difficult and expensive to deploy. Here we will explain three of them and what sets them apart, before we discuss the fourth, Retrieval-Augmented Generation in the next chapter.
@@ -83,6 +111,8 @@ Want to Learn More?
 For a deeper dive into prompt engineering and different prompting techniques, you can check out detailed resources and research papers on the topic.
 
 [Source](https://arxiv.org/pdf/2406.06608): Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
+
+## Fine Tuning
 
 # Introduction to RAG:
 
