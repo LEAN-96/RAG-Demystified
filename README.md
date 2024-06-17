@@ -299,7 +299,7 @@ $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
 
-The retrieved documents are injected in a prompt and given to the generator in a JSON format:
+The retrieved documents are injected in a prompt and given to the generator (LLM) in a JSON format:
 
     [
         {
