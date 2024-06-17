@@ -50,14 +50,45 @@ There are four approaches to enhance the output of LLM´s, where each of them ra
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/db891ba4-687c-4d40-b4dd-34aa13f1b54d)
 
+[Figure](https://www.fiddler.ai/blog/four-ways-that-enterprises-deploy-llms?WT.mc_id=academic-105485-koreyst)
 ## Prompt Engineering 
+What is a Prompt?
 
+A prompt is like a question or a set of instructions you give to an AI model to get a specific response. 
+
+What is Prompt Engineering?
+
+Prompt engineering is the process of fine-tuning these questions or instructions to get better and more accurate answers from the AI.
+
+How Does It Work?
+
+There are different techniques to structure these prompts, just like there are different ways to give directions. Some techniques might involve using clear, step-by-step instructions, while others might use examples to show what you mean. Sometimes, these techniques can get complex, involving conditional steps or branching paths.
+
+Why is Context Important?
+
+Providing clear and specific prompts helps the AI understand exactly what you want. This context can be given in various ways, such as by including examples or detailed instructions within the prompt itself.
+
+What's In-Context Learning (ICL)?
+
+In-Context Learning (ICL) means teaching the AI by giving it examples or instructions directly in the prompt, without having to retrain it.
+
+One-Shot and Few-Shot Prompting
+
+One-Shot Prompting: You give the AI one example to help it understand what you want.
+Few-Shot Prompting: You give the AI a few examples to make things even clearer.
+These examples are included in the prompt to provide the necessary context, helping the AI give more accurate answers.
+
+Want to Learn More?
+
+For a deeper dive into prompt engineering and different prompting techniques, you can check out detailed resources and research papers on the topic.
+
+[Source](https://arxiv.org/pdf/2406.06608): Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
 
 # Introduction to RAG:
 
 ![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
 
-
+Spoiler: The following terms and explaination are based on the [original paper](http://arxiv.org/abs/2005.11401) released by a research team from Facebook AI
 
 To address these limitations, the field of AI has introduced a general-purpose fine-tuning recipe called Retrieval-Augmented Generation (RAG). RAG was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) in 2020. The authors introduced RAG as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge). RAG builds upon the advancements in large language models (LLMs) like GPT (Generative Pre-trained Transformer) models, integrating retrieval-based methods to enhance the generation process and to overcome the fixed amount of knowledge (Parametric knowledge).
 
