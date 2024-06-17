@@ -107,7 +107,6 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 
 The basic RAG process involves indexing, retrieval, and generation. In simple terms, a user's input x is used to search for relevant documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt. The entire RAG-Process is often referred as "RAG-Pipeline".
 
-However, this approach, known as Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers.
 
 ## Indexing:
 Transforming unstructured data into a format that AI models can efficiently process is a key step in setting up RAG. Therefore, Indexing is a crucial step in preparing data. It involves several key steps:
@@ -343,7 +342,7 @@ Sources:
 
 
 # Advanced RAG
-
+However, this approach, known as Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers.
 Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant.
 
 # Modular RAG
