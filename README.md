@@ -37,6 +37,14 @@ Example: Through techniques like chain-of-thought prompting, LLMs can break down
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
 
 # LLM Architecture: Transformer
+The Transformer architecture is a groundbreaking model in the field of natural language processing (NLP) and has become the foundation for many state-of-the-art language models.
+
+The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and generates a set of continuous representations, while the decoder uses these representations to produce the output sequence.
+Each encoder layer has two main components: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. The decoder layers are similar but include an additional multi-head attention mechanism that attends to the encoder's output.
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7)
+
+
 
 BERT, short for “Bidirectional Encoder Representations from Transformers,” is a transformer-based language model trained with massive datasets to understand languages like humans do. Like Word2Vec, BERT can create word embeddings from input data it was trained with. Additionally, BERT can differentiate contextual meanings of words when applied to different phrases. Therfore, it understands words not just on their own but in the context they’re used in. For example, BERT creates different embeddings for ‘play’ as in “I went to a play” and “I like to play.” 
 This makes it better than models like Word2Vec, which don’t consider the words around them. Plus, BERT can handle the position of words really well, which is important.
