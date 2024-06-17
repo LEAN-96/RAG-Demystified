@@ -44,9 +44,14 @@ Another important limitation is that LLMs have a fixed amount of knowledge (Para
 
 Additionally, LLMs have technical restrictions, such as limits on the amount of text they can process at once (Token limits). This can affect their ability to handle large blocks of text and may make it harder to scale their use for bigger projects. 
 
-Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network
+# Improving LLMs output
+There are four approaches to enhance the output of LLM´s, where each of them ranges from easy and cheap to difficult and expensive to deploy. Here we will explain three of them and what sets them apart, before we discuss the fourth, Retrieval-Augmented Generation in the next chapter.
 
-Non-Parametric knowledge = Index 22 million * 100 encoded words chunks from wikipedia
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/db891ba4-687c-4d40-b4dd-34aa13f1b54d)
+
+## Prompt Engineering 
+
 
 # Introduction to RAG:
 
@@ -80,6 +85,10 @@ $$\text{d}(z) = \text{BERT}_d(z), \quad\text{BERT}_q(x)$$
 ==
  
 For the generator component the authors used a encoder-decoder pre-trained seq2seq transformer, [BART-large](https://arxiv.org/abs/1910.13461).
+
+Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network
+
+Non-Parametric knowledge = Index 22 million * 100 encoded words chunks from wikipedia
 
 Sources:
 
