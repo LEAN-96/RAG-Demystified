@@ -79,6 +79,17 @@ There are four approaches to enhance the output of LLM´s, where each of them ra
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/db891ba4-687c-4d40-b4dd-34aa13f1b54d)
 
 [Figure](https://www.fiddler.ai/blog/four-ways-that-enterprises-deploy-llms?WT.mc_id=academic-105485-koreyst)
+
+## Pre-Training
+Pre-Training is like a student attending a comprehensive school where they learn a wide range of subjects. During this phase, the student (or the model) absorbs a vast amount of general knowledge from various textbooks, articles, and other educational materials. This process equips the student with a broad understanding of many topics, even though they might not be an expert in any specific area.
+
+In the context of LLMs, pre-training involves training the model on massive amounts of text data from the internet, books, and other sources. The model learns to predict the next word in a sentence, which helps it understand language patterns, grammar, and general knowledge. This phase is crucial because it builds the foundational knowledge that the model will use later.
+
+## Fine-Tuning
+Fine-Tuning is like a student who, after attending general school, decides to specialize in a particular subject, such as mathematics or history. The student now focuses on specific textbooks and materials related to their chosen field, refining their knowledge and skills to become an expert in that area. 
+
+For LLMs, fine-tuning involves taking the pre-trained model and training it further on a smaller, task-specific dataset. This process helps the model adapt its general knowledge to perform well on specific tasks, such as answering questions about medical information or generating code. Fine-tuning adjusts the model's parameters to better suit the particular requirements of the task at hand. Although, fine-tuning is a good approach to optimize LLMs for a specific task, it can be very resource intensive and time consuming.
+
 ## Prompt Engineering 
 **What is a Prompt?**
 
@@ -104,7 +115,7 @@ These examples are included in the prompt to provide the necessary context, help
 For a deeper dive into prompt engineering and different prompting techniques, you can check out detailed resources and research papers on the topic.
 [Source](https://arxiv.org/pdf/2406.06608): Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
 
-## Fine Tuning
+
 
 # Introduction to RAG:
 
