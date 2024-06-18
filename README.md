@@ -63,9 +63,9 @@ Before LLMs can generate text, they must process the input text in a language th
 
 2. The final output sequence is produced, which can be a translated sentence, a summary, or any other sequence-based task.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/47e7384a-2efe-4171-8f26-6113bd73e19b)
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/812bdc85-050c-4aa7-ad59-7644694c237f)
 
-[Figure](https://magazine.sebastianraschka.com/p/understanding-encoder-and-decoder)
+[Figure](https://arxiv.org/pdf/1706.03762)
 
 
 
