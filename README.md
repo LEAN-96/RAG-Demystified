@@ -48,7 +48,7 @@ Before LLMs can generate text, they must process the input text in a language th
 
 1. Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process. 
 
-2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. Each token is mapped to a high-dimensional vector - or long list of values. The values in an embedding represent the linguistic characteristics of a word. This layer is essentially a lookup table in the training data where each token has a corresponding vector. These embeddings are the input to the Transformer model. 
+2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. Each token is mapped to a high-dimensional vector - or a long list of values. The values in an embedding represent the linguistic characteristics of a word. This layer is essentially a lookup table in the training data where each token has a corresponding vector. Tokens or words with similar meaning their vectors are closer to each other.
 
 3. Positional Encoding is crucial because Transformers do not have a built-in sense of the order of tokens. Positional encodings are added to the token embeddings to provide information about the position of each token in the sequence. 
 
