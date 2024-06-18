@@ -92,6 +92,8 @@ Final Selection: This process continues until the model generates an end-of-sequ
 
 Limitations: Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
 
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/d25ebde1-cc02-44bf-8ed2-4ae1bda85a2d)
+
 Sources:
 
 [D2L](https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html)
