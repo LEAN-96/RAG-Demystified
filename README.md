@@ -1,10 +1,10 @@
 # RAG-Demystified
 
-Are you intrigued by the concept of  **Retrieval-Augmented-Generation (RAG) ** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI. 
+Are you intrigued by the concept of  **Retrieval-Augmented-Generation (RAG) ** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI.  
 
-In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind. 
+In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind.  
 
-But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like  **Large Language Models (LLMs) ** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone. 
+But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like  **Large Language Models (LLMs) ** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone.  
 
 Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity.
 
@@ -56,10 +56,10 @@ Before LLMs can generate text, they must process the input text in a language th
 
 5. The decoder takes the encoded representations and generates the output sentence. It uses self-attention to focus on the previously generated words and encoder-decoder attention to focus on the input sentence. The decoder generates the output word by word until the entire sentence is produced.
 
-The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/37883a85-02a8-441f-abfd-b9bea35e923c)
 
+The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs.
 
 # Limitations of Large Language Models (LLMs):
 
