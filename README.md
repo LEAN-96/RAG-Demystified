@@ -63,10 +63,10 @@ Before LLMs can generate text, they must process the input text in a language th
 
 2. The final output sequence is produced, which can be a translated sentence, a summary, or any other sequence-based task.
 
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/47e7384a-2efe-4171-8f26-6113bd73e19b)
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bb93bd3d-ff1f-45f5-a9a6-b8b686246b14)
+[Figure](https://magazine.sebastianraschka.com/p/understanding-encoder-and-decoder)
 
-[Figure](https://discuss.huggingface.co/t/is-beam-search-always-better-than-greedy-search/2943)
 
 
 The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. 
@@ -95,7 +95,9 @@ Final Selection: This process continues until the model generates an end-of-sequ
 
 Limitations: Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/d25ebde1-cc02-44bf-8ed2-4ae1bda85a2d)
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bb93bd3d-ff1f-45f5-a9a6-b8b686246b14)
+
+[Figure](https://discuss.huggingface.co/t/is-beam-search-always-better-than-greedy-search/2943)
 
 Sources:
 
