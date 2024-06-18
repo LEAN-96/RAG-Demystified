@@ -52,7 +52,7 @@ Before LLMs can generate text, they must process the input text in a language th
 
 3. Positional Encoding is crucial because Transformers do not have a built-in sense of the order of tokens. Positional encodings are added to the token embeddings to provide information about the position of each token in the sequence.
 
-4. The embeddings with positional encodings are passed through multiple layers of self-attention and feed-forward networks in the encoder. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. This mechanism enables the model to capture dependencies regardless of their distance in the sequence.
+4. The embeddings with positional encodings are passed through multiple layers of self-attention and feed-forward networks in the encoder. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. The self-attention mechanism is key to understanding context. By allowing each word to attend to every other word in the sentence, the Transformer can capture long-range dependencies and relationships regardless of their distance in the sequence.
 
 5. The decoder takes the encoded representations and generates the output sentence. It uses self-attention to focus on the previously generated words and encoder-decoder attention to focus on the input sentence. The decoder generates the output word by word until the entire sentence is produced.
 
