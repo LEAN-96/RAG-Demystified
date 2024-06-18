@@ -1,10 +1,10 @@
 # RAG-Demystified
 
-Are you intrigued by the concept of **Retrieval-Augmented-Generation (RAG)** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI.
+Are you intrigued by the concept of  **Retrieval-Augmented-Generation (RAG) ** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI. 
 
-In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind.
+In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind. 
 
-But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like **Large Language Models (LLMs)** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone.
+But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like  **Large Language Models (LLMs) ** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone. 
 
 Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity.
 
@@ -44,7 +44,7 @@ Each encoder layer has two main components: a multi-head self-attention mechanis
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7)
 
-Before LLMs can generate text, they must process the input text in a language they can understand.
+Before LLMs can generate text, they must process the input text in a language they can understand. Lets break down the encoder-decoder process step-by-step:
 
 1.  Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process.
 
