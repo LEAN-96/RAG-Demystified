@@ -1,65 +1,65 @@
 # RAG-Demystified
 
-Are you intrigued by the concept of  **Retrieval-Augmented-Generation (RAG) ** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI.  
+Are you intrigued by the concept of  **Retrieval-Augmented-Generation (RAG) ** but find it intimidating due to its association with Artificial Intelligence (AI) and Natural Langauge Processing (NLP)? Look no further! RAG-Demystified is your gateway to understanding this groundbreaking technology without the need for prior expertise in AI.   
 
-In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind.  
+In this repository, our mission is simple: to break down RAG into easily digestible explanations that anyone can understand. Whether you're a student exploring the realms of artificial intelligence, a professional seeking to broaden your knowledge, or simply curious about the latest advancements in technology, RAG-Demystified is designed with you in mind.   
 
-But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like  **Large Language Models (LLMs) ** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone.  
+But we don't stop there. Recognizing that the AI community often assumes familiarity with concepts like  **Large Language Models (LLMs) ** and the transformer architecture, we go the extra mile to ensure that even the basics are accessible to everyone.   
 
-Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity.
-
-
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fd5f90d8-c481-4200-8c9e-d48250f5dba6)
+Join us on a journey of discovery as we unravel the mysteries of RAG and provide you with the tools to navigate this exciting field with confidence. By the end of your exploration with RAG-Demystified, you'll have a solid understanding of not only RAG itself but also the foundational concepts that underpin it. Welcome to RAG-Demystified, where complexity meets clarity. 
 
 
-
-# Fundamentals of Large Language Models (LLMs):
-
-Large Language Models (LLMs) refer to advanced types of AI models, typically based on Transformer architectures, that have hundreds of billions (or more) parameters. These models are trained on vast amounts of text data, examples being GPT-3, PaLM, Galactica, and LLaMA. LLMs have impressive capabilities in understanding natural language and solving complex tasks through text generation.
-
-LLMs are not just static tools; they exhibit remarkable emergent abilities. This means that as these models interact with users and tasks, they demonstrate unexpected skills or talents that weren't explicitly programmed. Here are some key emergent abilities:
-
-1. Instruction Following:
-
-LLMs can follow given instructions well during inference (when they are generating outputs).
-Example: If you ask an LLM to write a story in the style of a famous author, it can produce a surprisingly accurate piece even if it wasn't specifically trained for that task.
-
-2. In-Context Learning:
-
-LLMs can refine their responses based on the context provided within the prompt itself. This helps them produce more relevant and coherent outputs.
-Example: When given a few examples of a specific task within the prompt, like translating sentences, the model can learn and apply the pattern immediately.
-
-3. Step-by-Step Reasoning:
-
-LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems.
-Example: Through techniques like chain-of-thought prompting, LLMs can break down and solve problems that require several logical steps.
-
-[A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
-
-# LLM Architecture: Transformer
-The Transformer architecture, introduced by [Vaswani et al. in 2017](https://arxiv.org/abs/1706.03762), revolutionized natural language processing (NLP) by enabling efficient parallelization and handling long-range dependencies in text. It has become the foundation for many state-of-the-art language models.
-
-The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and generates a set of continuous representations, while the decoder uses these representations to produce the output sequence.
-Each encoder layer has two main components: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. The decoder layers are similar but include an additional multi-head attention mechanism that attends to the encoder's output.
-
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7)
-
-Before LLMs can generate text, they must process the input text in a language they can understand. Lets break down the encoder-decoder process step-by-step:
-
-1. Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process.
-
-2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. Each token is mapped to a high-dimensional vector - or long list of values. The values in an embedding represent the linguistic characteristics of a word. This layer is essentially a lookup table in the training data where each token has a corresponding vector. These embeddings are the input to the Transformer model.
-
-3. Positional Encoding is crucial because Transformers do not have a built-in sense of the order of tokens. Positional encodings are added to the token embeddings to provide information about the position of each token in the sequence.
-
-4. The embeddings with positional encodings are passed through multiple layers of self-attention and feed-forward networks in the encoder. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. The self-attention mechanism is key to understanding context. By allowing each word to attend to every other word in the sentence, the Transformer can capture long-range dependencies and relationships regardless of their distance in the sequence.
-
-5. The decoder takes the encoded representations and generates the output sentence. It uses self-attention to focus on the previously generated words and encoder-decoder attention to focus on the input sentence. The decoder generates the output word by word until the entire sentence is produced.
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fd5f90d8-c481-4200-8c9e-d48250f5dba6) 
 
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/37883a85-02a8-441f-abfd-b9bea35e923c)
 
-The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs.
+# Fundamentals of Large Language Models (LLMs): 
+
+Large Language Models (LLMs) refer to advanced types of AI models, typically based on Transformer architectures, that have hundreds of billions (or more) parameters. These models are trained on vast amounts of text data, examples being GPT-3, PaLM, Galactica, and LLaMA. LLMs have impressive capabilities in understanding natural language and solving complex tasks through text generation. 
+
+LLMs are not just static tools; they exhibit remarkable emergent abilities. This means that as these models interact with users and tasks, they demonstrate unexpected skills or talents that weren't explicitly programmed. Here are some key emergent abilities: 
+
+1. Instruction Following: 
+
+LLMs can follow given instructions well during inference (when they are generating outputs). 
+Example: If you ask an LLM to write a story in the style of a famous author, it can produce a surprisingly accurate piece even if it wasn't specifically trained for that task. 
+
+2. In-Context Learning: 
+
+LLMs can refine their responses based on the context provided within the prompt itself. This helps them produce more relevant and coherent outputs. 
+Example: When given a few examples of a specific task within the prompt, like translating sentences, the model can learn and apply the pattern immediately. 
+
+3. Step-by-Step Reasoning: 
+
+LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems. 
+Example: Through techniques like chain-of-thought prompting, LLMs can break down and solve problems that require several logical steps. 
+
+[A Survey of Large Language Models](https://arxiv.org/abs/2303.18223) 
+
+# LLM Architecture: Transformer 
+The Transformer architecture, introduced by [Vaswani et al. in 2017](https://arxiv.org/abs/1706.03762), revolutionized natural language processing (NLP) by enabling efficient parallelization and handling long-range dependencies in text. It has become the foundation for many state-of-the-art language models. 
+
+The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and generates a set of continuous representations, while the decoder uses these representations to produce the output sequence. 
+Each encoder layer has two main components: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. The decoder layers are similar but include an additional multi-head attention mechanism that attends to the encoder's output. 
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7) 
+
+Before LLMs can generate text, they must process the input text in a language they can understand. Lets break down the encoder-decoder process step-by-step: 
+
+1. Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process. 
+
+2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. Each token is mapped to a high-dimensional vector - or long list of values. The values in an embedding represent the linguistic characteristics of a word. This layer is essentially a lookup table in the training data where each token has a corresponding vector. These embeddings are the input to the Transformer model. 
+
+3. Positional Encoding is crucial because Transformers do not have a built-in sense of the order of tokens. Positional encodings are added to the token embeddings to provide information about the position of each token in the sequence. 
+
+4. The embeddings with positional encodings are passed through multiple layers of self-attention and feed-forward networks in the encoder. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. The self-attention mechanism is key to understanding context. By allowing each word to attend to every other word in the sentence, the Transformer can capture long-range dependencies and relationships regardless of their distance in the  sequence.
+
+5. The decoder takes the encoded representations and generates the output sentence. It uses self-attention to focus on the previously generated words and encoder-decoder attention to focus on the input sentence. The decoder generates the output word by word until the entire sentence is produced. 
+
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/37883a85-02a8-441f-abfd-b9bea35e923c) 
+
+The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. 
 
 # Limitations of Large Language Models (LLMs):
 
@@ -447,6 +447,8 @@ Recent studies shows the shift towards visual RAG approaches.
 [Visual introduction to Transformers](https://www.youtube.com/watch?v=ISPId9Lhc1g)
 
 [Visual introduction to Attention mechanism](https://www.youtube.com/watch?v=eMlx5fFNoYc)
+
+[Generative AI](https://ig.ft.com/generative-ai/)
 
 ## Large Language Models:
 
