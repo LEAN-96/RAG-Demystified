@@ -68,9 +68,28 @@ Before LLMs can generate text, they must process the input text in a language th
 
 The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. 
 
+## Decoding strategies:
+
+Decoding strategies are methods used by language models to generate text based on a given input prompt. These strategies determine how the model selects the next word in a sequence. Let's focus on two popular decoding strategies: Greedy Search and Beam Search.
+
+### Greedy Search is a straightforward and fast decoding strategy. Here's how it works:
+
+Step-by-Step Selection: At each step, the model looks at the probabilities of all possible next words and selects the one with the highest probability.
+Immediate Choice: Once the most probable word is chosen, it becomes part of the output sequence, and the process repeats for the next word.
+Efficiency: This method is computationally efficient because it only considers the most likely word at each step, without evaluating other potential sequences.
+Limitations:  Greedy search might miss out on better overall sequences because it doesn't consider the long-term context. It only focuses on the immediate next word, which can lead to less coherent or meaningful sentences.
+
+### Beam Search is a more sophisticated decoding strategy that balances efficiency and optimality. Here's how it works:
+
+Multiple Candidates: Instead of selecting just one word at each step, beam search keeps track of the top N most likely sequences (where N is the beam size).
+Expansion and Pruning: At each step, the model expands each of the N sequences by considering all possible next words. It then keeps the top N sequences based on their combined probabilities.
+Final Selection: This process continues until the model generates an end-of-sequence token or reaches the maximum length. The sequence with the highest overall score is chosen as the final output.
+Limitations: Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
+
 Sources:
 
 [D2L](https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html)
+[D2L](https://d2l.ai/chapter_recurrent-modern/beam-search.html)
 [Generative AI](https://ig.ft.com/generative-ai/)
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
 [Large Language Models: A Survey](https://arxiv.org/abs/2402.06196)
@@ -110,7 +129,7 @@ There are four approaches to enhance the output of LLM´s, where each of them ra
 ## Pre-Training
 Pre-Training is like a student attending a comprehensive school where they learn a wide range of subjects. During this phase, the student (or the model) absorbs a vast amount of general knowledge from various textbooks, articles, and other educational materials. This process equips the student with a broad understanding of many topics, even though they might not be an expert in any specific area.
 
-In the context of LLMs, pre-training involves training the model on massive amounts of text data from the internet, books, and other sources. The model learns to predict the next word in a sentence, which helps it understand language patterns, grammar, and general knowledge. This phase is crucial because it builds the foundational knowledge that the model will use later.
+In the context of LLMs, pre-training involves training the model on massive amounts of text data from the internet, books, and other sources. The model learns to predict the next word in a sentence, which helps it understand language patterns, grammar, and general knowledge. This phase is crucial because it builds the foundational knowledge that the model will use later. However, Pre-Training a model from scratch is really expensive and resource-intensive. 
 
 ## Fine-Tuning
 Fine-Tuning is like a student who, after attending general school, decides to specialize in a particular subject, such as mathematics or history. The student now focuses on specific textbooks and materials related to their chosen field, refining their knowledge and skills to become an expert in that area. 
