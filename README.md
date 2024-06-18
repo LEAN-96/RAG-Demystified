@@ -68,6 +68,13 @@ Before LLMs can generate text, they must process the input text in a language th
 
 The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. 
 
+Sources:
+
+[D2L](https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html)
+[Generative AI](https://ig.ft.com/generative-ai/)
+[A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
+[Large Language Models: A Survey](https://arxiv.org/abs/2402.06196)
+
 # Limitations of Large Language Models (LLMs):
 
 While Large Language Models (LLMs) are powerful tools, they come with several important limitations:
