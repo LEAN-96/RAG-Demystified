@@ -175,23 +175,32 @@ Think of a pre-trained Large Language Model (LLM) as a closed-book exam where th
 
 ![RAG_Analogy](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/92b40321-be9d-44c0-9c25-96900ad67ef4)
 
-*Spoiler: The following terms, formulas and explaination are based on the [original RAG paper](http://arxiv.org/abs/2005.11401) [DPR paper](https://arxiv.org/abs/2004.04906) released by a research team from Facebook AI*
+*Spoiler: The following terms, formulas and explaination are based on the [original RAG paper](http://arxiv.org/abs/2005.11401) and [DPR paper](https://arxiv.org/abs/2004.04906) released by a research team from Facebook AI*
 
 Understanding RAG begins with grasping the main ideas of retrieval-based and generation-based approaches in NLP. RAG works similarly to a typical sequence-to-sequence (seq2seq) model, where it takes one sequence x as input and produces a corresponding sequence y as output. Generation-based models in an traditional seq2seq model or LLMs focus on creating text solely based on the input x without looking at external sources to produce output y. However, what sets RAG apart is that it adds an extra step. Instead of directly sending the input x to the generator, RAG uses retrieval-based methods, which involve finding useful information from document z, like databases, to help with generating text. 
 
 
 RAG combines these two methods by using [Dense Passage Retrieval](https://arxiv.org/abs/2004.04906) (DPR) which is based on bi-encoder architecture to find relevant context from external sources and a generator component to produce text based on both the input and retrieved context. For this purpose two independent [BERT models](https://arxiv.org/abs/1810.04805) were used: An document encoder [BERT](https://huggingface.co/google-bert/bert-base-uncased) and a fine-tuned query encoder BERT. 
 
+RAG summarized by the authors:
+"*We build RAG models where the parametric memory is a pre-trained seq2seq transformer, and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We combine these components in a probabilistic model trained end-to-end. The retriever (Dense Passage Retriever, henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
+
 BERT, short for “Bidirectional Encoder Representations from Transformers,” is a transformer-based language model trained with massive datasets to understand languages like humans do. Like Word2Vec, BERT can create word embeddings from input data it was trained with. Additionally, BERT can differentiate contextual meanings of words when applied to different phrases. Therfore, it understands words not just on their own but in the context they’re used in. For example, BERT creates different embeddings for ‘play’ as in “I went to a play” and “I like to play.” This makes it better than models like Word2Vec, which don’t consider the words around them. Plus, BERT can handle the position of words really well, which is important.
 
-[BERTBASE](https://huggingface.co/google-bert/bert-base-uncased) (L=12, H=768, A=12, Total Parameters=110M)
 
 
-For the generator component the authors used a encoder-decoder pre-trained seq2seq transformer, [BART-large](https://arxiv.org/abs/1910.13461).
+Key components used:
 
-Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network (BART-large)
 
-Non-Parametric knowledge = Index 22 million * 100 encoded words chunks from wikipedia 
+<br> Generator = Encoder-Decoder pre-trained Seq2Seq Transformer, [BART-large](https://arxiv.org/abs/1910.13461). </br>
+
+<br> Query Encoder = Dense Passage Retrieval (DPR), Fine-Tuned [BERT](https://huggingface.co/google-bert/bert-base-uncased) </br>
+
+<br> Document Encoder = [BERT](https://huggingface.co/google-bert/bert-base-uncased) </br>
+
+<br> Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network (BART-large) </br>
+
+<br> Non-Parametric knowledge = FAISS Vector Index, consisting of 22 million * 100 encoded words chunks from wikipedia </br>
 
 Sources:
 
@@ -338,7 +347,7 @@ In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a
 
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 
-1. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt for generating a response.
+1. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt and given to the LLM for generating a response.
 
 "*To combine the input x with the retrieved content z when generating from BART, we simply concatenate them.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -364,6 +373,8 @@ The retrieved documents are injected in a prompt and given to the generator (LLM
     ]
 
 The authors propose two RAG model variants to decode from this set of latent documents: 
+
+"*We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
 ## RAG-Token Model
 "*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
@@ -415,6 +426,11 @@ This process allows the RAG-Token model to effectively combine retrieval and gen
 
 Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
 These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/850af0df-ce34-4f57-9d44-1da520298807)
+
+[Figure](https://sharif-llm.ir/assets/lectures/LLM-RAG.pdf)
+
 
 $$p_{\text{RAG-Sequence}}(y|x) \approx \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) p_θ(y|x, z) = \sum_{z \in \text{top-k}(p(⋅|x))} p_n(z|x) \prod_{i}^N p_θ(y_i | x, z, y_{1:i-1})$$
 
