@@ -44,17 +44,19 @@ Each encoder layer has two main components: a multi-head self-attention mechanis
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7)
 
-1. Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process.
+Before LLMs can generate text, they must process the input text in a language they can understand.
 
-2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. These embeddings are the input to the Transformer model.
-Embedding Layer: Each token is mapped to a high-dimensional vector. This layer is essentially a lookup table where each token has a corresponding vector.
-Contextual Embeddings: Unlike static embeddings (e.g., Word2Vec), contextual embeddings capture the meaning of a word based on its context in the sentence. This is achieved through the self-attention mechanism.
+1.  Tokenization is the process of converting a sequence of text into smaller units called tokens. These tokens can be words, subwords, or characters, depending on the tokenizer used. The goal is to break down the text into manageable pieces that the model can process.
+
+2. Transformer Embeddings convert tokens into dense vectors that capture semantic information. Each token is mapped to a high-dimensional vector. This layer is essentially a lookup table where each token has a corresponding vector. These embeddings are the input to the Transformer model.
 
 3. Positional Encoding is crucial because Transformers do not have a built-in sense of the order of tokens. Positional encodings are added to the token embeddings to provide information about the position of each token in the sequence.
 
-4. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. This mechanism enables the model to capture dependencies regardless of their distance in the sequence.
+4. The embeddings with positional encodings are passed through multiple layers of self-attention and feed-forward networks in the encoder. Self-Attention Mechanism allows the model to weigh the importance of different tokens in the sequence when encoding a particular token. This mechanism enables the model to capture dependencies regardless of their distance in the sequence.
 
-5. Mapping refers to the transformation of input embeddings through the layers of the Transformer.
+5. The decoder takes the encoded representations and generates the output sentence. It uses self-attention to focus on the previously generated words and encoder-decoder attention to focus on the input sentence. The decoder generates the output word by word until the entire sentence is produced.
+
+The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/37883a85-02a8-441f-abfd-b9bea35e923c)
 
