@@ -502,6 +502,7 @@ Recent studies shows the shift towards visual RAG approaches.
 
 
 # Resources and Further Reading:
+This is a collection of further readings and RAG application tools.
 
 ## Transformer:
 [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
@@ -557,9 +558,9 @@ Recent studies shows the shift towards visual RAG approaches.
 | [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) | [RAGexplorer](https://github.com/gabrielchua/RAGxplorer/) | 
 | [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |[RAGmap](https://github.com/JGalego/RAGmap) |
 | [Haystack](https://haystack.deepset.ai/) | [Verba](https://github.com/weaviate/Verba) | [Langfuse](https://langfuse.com/) | [ChunkVisualizer](https://huggingface.co/spaces/Nymbo/chunk_visualizer) |
-| [Canopy](https://github.com/pinecone-io/canopy) | [Cohere Coral](https://cohere.com/coral)  | [RAG-Arena](https://github.com/mendableai/rag-arena) | [ChunkViz](https://chunkviz.up.railway.app/) |
+| [Canopy](https://github.com/pinecone-io/canopy) |  [VectorShift](https://vectorshift.ai/) | [RAG-Arena](https://github.com/mendableai/rag-arena) | [ChunkViz](https://chunkviz.up.railway.app/) |
 | [RAGFlow](https://github.com/infiniflow/ragflow?tab=readme-ov-file) | [Meltano](https://meltano.com/)  | [Auto-RAG](https://github.com/Marker-Inc-Korea/AutoRAG) | |
-| [DSPy](https://github.com/stanfordnlp/dspy) | [Create-TSI](https://github.com/telekom/create-tsi)  | [RAGTune](https://github.com/misbahsy/RAGTune) | |
+| [DSPy](https://github.com/stanfordnlp/dspy) | [Cohere Coral](https://cohere.com/coral)  | [RAGTune](https://github.com/misbahsy/RAGTune) | |
 | [Cognita](https://github.com/truefoundry/cognita) |[Verta](https://www.verta.ai/rag)  |[Lunary](https://lunary.ai/) | 
 | [Dify](https://github.com/langgenius/dify) | [Quivr](https://docs.quivr.app/intro) | [DeepEval](https://github.com/confident-ai/deepeval) |  |
 |  | [RAGapp](https://github.com/ragapp/ragapp) | [Trulens](https://www.trulens.org/) |  |
