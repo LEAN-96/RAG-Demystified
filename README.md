@@ -186,7 +186,7 @@ RAG summarized by the authors:
 "*We build RAG models where the parametric memory is a pre-trained seq2seq transformer, and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We combine these components in a probabilistic model trained end-to-end. The retriever (Dense Passage Retriever, henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
 
-
+In simple terms, a user's input x is used to search for relevant top-k documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt.
 
 ## Key components used:
 
@@ -219,6 +219,9 @@ Additionally, RAG enhances transparency and helps with error checking and copyri
 
 One advantage is its ability to reduce the need for frequent retraining (fine-tuning) of the model. Unlike traditional approaches, where the entire model must be retrained with new documents to change what it knows, RAG simplifies this process. By updating the external database with new information, RAG eliminates the need for the model to memorize everything, saving time and computational resources. This flexibility allows us to control what the model knows simply by swapping out the documents used for knowledge retrieval.
 
+Source:
+
+[Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 # Naive RAG
 
@@ -228,9 +231,7 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 
 *The following description of the RAG-process is taken from a [survey](http://arxiv.org/abs/2312.10997) and the terminilogy with citatations from the original papers is applied to it.*
 
-The basic RAG process involves indexing, retrieval, and generation. 
-
-In simple terms, a user's input x is used to search for relevant documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt. The entire RAG-Process is often referred as "RAG-Pipeline".
+The basic RAG process involves three phases: Indexing, retrieval, and generation. The entire RAG-Process is often referred as "RAG-Pipeline".
 
 
 ## Indexing:
