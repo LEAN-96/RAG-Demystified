@@ -163,11 +163,8 @@ One-Shot Prompting: You give the AI one example to help it understand what you w
 Few-Shot Prompting: You give the AI a few examples to make things even clearer.
 These examples are included in the prompt to provide the necessary context, helping the AI give more accurate answers.
 
-**Want to Learn More?**
-For a deeper dive into prompt engineering and different prompting techniques, you can check out detailed resources and research papers on the topic.
-[Source](https://arxiv.org/pdf/2406.06608): 
-Schulhoff S, Ilie M, Balepur N, et al (2024) The Prompt Report: A Systematic Survey of Prompting Techniques
-
+Source: 
+[The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
 
 
 ## Retrieval-Augmented Generation (RAG):
