@@ -121,6 +121,8 @@ LLMs are stochastic or probabilistic. Sending the same prompt multiple times can
 6. Resource-Intensive
 LLMs are generally very large, requiring many costly GPU machines for training and serving. This size can also lead to poor service level agreements (SLAs), particularly in terms of latency.
 
+Source:
+
 [Large Language Models: A Survey](https://arxiv.org/html/2402.06196v2#S4)
 
 # Optimize LLMs output
