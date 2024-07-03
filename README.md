@@ -157,7 +157,8 @@ One-Shot Prompting: You give the AI one example to help it understand what you w
 Few-Shot Prompting: You give the AI a few examples to make things even clearer.
 These examples are included in the prompt to provide the necessary context, helping the AI give more accurate answers.
 
-Source: 
+Source:
+
 [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
 
 
