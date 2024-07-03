@@ -89,10 +89,14 @@ Instead of selecting just one word at each step, beam search keeps track of the 
 
 Sources:
 
-[D2L](https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html)
-[D2L](https://d2l.ai/chapter_recurrent-modern/beam-search.html)
+[D2L - Encoder-Decoder](https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html)
+
+[D2L - Beam Search](https://d2l.ai/chapter_recurrent-modern/beam-search.html)
+
 [Generative AI](https://ig.ft.com/generative-ai/)
+
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
+
 [Large Language Models: A Survey](https://arxiv.org/abs/2402.06196)
 
 # Limitations of Large Language Models (LLMs):
