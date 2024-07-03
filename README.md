@@ -65,11 +65,11 @@ Before LLMs can generate text, they must process the input text in a language th
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/812bdc85-050c-4aa7-ad59-7644694c237f)
 
+The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. Here how the entire architecture is illustrated in the initial transformer [paper](https://arxiv.org/abs/1706.03762)
+
 [Figure](https://arxiv.org/pdf/1706.03762)
 
 
-
-The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. 
 
 ## Decoding strategies:
 
