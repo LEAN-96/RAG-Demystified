@@ -187,18 +187,18 @@ RAG summarized by the authors:
 
 
 
-Key components used:
+## Key components used:
 
 
-<br> Generator = Encoder-Decoder pre-trained Seq2Seq Transformer, [BART-large](https://arxiv.org/abs/1910.13461). </br>
++ Generator = Encoder-Decoder pre-trained Seq2Seq Transformer, [BART-large](https://arxiv.org/abs/1910.13461).
 
-<br> Query Encoder = Dense Passage Retrieval (DPR), Fine-Tuned [BERT](https://huggingface.co/google-bert/bert-base-uncased) </br>
++ Query Encoder = Dense Passage Retrieval (DPR), Fine-Tuned [BERT](https://huggingface.co/google-bert/bert-base-uncased) 
 
-<br> Document Encoder = [BERT](https://huggingface.co/google-bert/bert-base-uncased) </br>
++ Document Encoder = [BERT](https://huggingface.co/google-bert/bert-base-uncased) 
 
-<br> Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network (BART-large) </br>
++ Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network (BART-large)
 
-<br> Non-Parametric knowledge = FAISS Vector Index, consisting of 22 million * 100 encoded words chunks from wikipedia </br>
++ Non-Parametric knowledge = FAISS Vector Index, consisting of 22 million * 100 encoded words chunks from wikipedia
 
 [BERT](https://arxiv.org/pdf/1810.04805), short for “Bidirectional Encoder Representations from Transformers,” is a transformer-based language model trained with massive datasets to understand languages like humans do. Like Word2Vec, BERT can create word embeddings from input data it was trained with. Additionally, BERT can differentiate contextual meanings of words when applied to different phrases. Therfore, it understands words not just on their own but in the context they’re used in. For example, BERT creates different embeddings for ‘play’ as in “I went to a play” and “I like to play.” This makes it better than models like Word2Vec, which don’t consider the words around them. Plus, BERT can handle the position of words really well, which is important.
 
