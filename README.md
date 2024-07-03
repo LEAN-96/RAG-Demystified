@@ -41,7 +41,7 @@ The Transformer architecture, introduced by [Vaswani et al. in 2017](https://arx
 
 The Transformer consists usually of an encoder and a decoder, each composed of multiple identical layers. The encoder-decoder architecture is a powerful neural network design used for sequence-to-sequence tasks, such as machine translation.
 
-The encoder processes the input sequence and generates a set of continuous representations, while the decoder uses these representations to produce the output sequence. 
+The encoder processes the input sequence and generates a set of continuous representations, while the decoder uses these representations (depicted as state) to produce the output sequence. 
 Each encoder layer has two main components: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. The decoder layers are similar but include an additional multi-head attention mechanism that attends to the encoder's output. 
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/fa005044-d1ab-4ac3-b55f-9f8ab51456a7) 
