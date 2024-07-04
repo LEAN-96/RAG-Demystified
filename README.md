@@ -258,7 +258,8 @@ The entire index process is described as followed:
 "*Given a collection of M text passages, the goal of our dense passage retriever (DPR) is to index all the passages in a low-dimensional and continuous space, such that it can retrieve efﬁciently the top k passages relevant to the input question for the reader at run-time. Our dense passage retriever (DPR) uses a dense encoder EP (·) which maps any text passage to a d- dimensional real-valued vectors and builds an index for all the M passages that we will use for retrieval.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/a727079b-c65e-466e-8473-a3702eb02b21)
+![VectorDB](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/d4d93974-2a75-4496-bfc0-24854da8137b)
+[Figure](https://weaviate.io/blog/what-is-a-vector-database)
 
 
 ## Index Visualization
@@ -287,7 +288,10 @@ $$\text{E}_{Q}(q)$$
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 
-2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This search, also called vector search or similarity search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the document chunk vectors. In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm. This step is implemented within the FAISS index and prepares the documents for the generation process.
+2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This search, also called vector search or similarity search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the document chunk vectors. For this purpose mathematical operations like Euclidean distance, Cosine similarity, Manhattan distance or Dot product can be applied measuring the distance between two vector representations to determine their similarity.  In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.  This step is implemented within the FAISS index and prepares the relevant documents for the generation process.
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/394f7ab3-e2cc-4abf-8f0d-fba5ad1d6b8a)
+[Figure](https://weaviate.io/blog/what-is-a-vector-database)
 
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
