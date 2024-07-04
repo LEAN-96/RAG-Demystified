@@ -482,6 +482,14 @@ Sources:
 
 [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)
 
+# Applications of RAG:
+- Chatbot for Customer support
+- Documents Q&A
+- Internal knowledge Q&A
+- Agents
+- Multimodal Applications
+- Query analysis
+- Structured Data Extraction
 
 # Advanced RAG
 Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers. Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant. The research field of RAG is moving fast, that´s why a lot of advanced RAG strategies are recently developed. If you want to dive deeper into the field I recommend the following material:
@@ -495,18 +503,8 @@ Naive RAG, has some drawbacks. It may suffer from low precision, meaning it some
 Recent studies also shows the shift towards multimodal RAG approaches.
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
 
-
-
-# Applications of RAG:
-- Chatbot for Customer support
-- Documents Q&A
-- Internal knowledge Q&A
-- Agents
-- Multimodal Applications
-- Query analysis
-- Structured Data Extraction
-- 
-
+# Conclusion
+RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises implementing RAG within environment. The shift towards agentic and modular RAG will pave the way beyond text-based Q&A applications. 
 
 # Resources and Further Reading:
 This is a collection of further readings and RAG application tools.
