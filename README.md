@@ -198,7 +198,7 @@ In simple terms, a user's input x is used to search for relevant top-k documents
 
 + Parametric knowledge = Knowledge thats implictly stored in the weights of the neural network (BART-large)
 
-+ Non-Parametric knowledge = FAISS Vector Index, consisting of 22 million * 100 encoded words chunks from wikipedia
++ Non-Parametric knowledge = [FAISS](https://github.com/facebookresearch/faiss) Vector Index, consisting of 22 million * 100 encoded words chunks from wikipedia
 
 
 
@@ -263,7 +263,7 @@ $$\text{d(z)= BERT}_{d}(z)$$
 ==
 $$\text{E}_{P}(p)$$
  
-4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Researcher from Facebook used an FAISS index as vector database.
+4. Storage in Vector Database: Finally, we store these encoded chunks in a vector database. This specialized database is designed to manage and search embedded vectors. This makes it easy for the retriever to find what it needs quickly when we ask it questions later on. Similar passages are stored closer to each other as dense vector representations. Researcher from Facebook used an [FAISS](https://github.com/facebookresearch/faiss) index as vector database.
 
 "*During inference time, we apply the passage encoder EP (p) to all the passages and index them using FAISS ofﬂine. FAISS is an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
