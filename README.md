@@ -234,14 +234,15 @@ Sources:
 [A Practitioners Guide to Retrieval Augmented Generation (RAG)](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 # Naive RAG
-
-**High-Level RAG Architecture:**
-
-![RAG_Updated](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/4ed80cc8-388c-44db-87d9-547cdb8fb757)
+In this repository we will focus mainly on the Naive RAG approach. 
 
 *The following description of the RAG-process is taken from a [survey](http://arxiv.org/abs/2312.10997) and the terminilogy with citatations from the original papers is applied to it. Since for the two papers two formula expressions were used both are written down.*
 
 The basic RAG process involves three phases: Indexing, retrieval, and generation. The entire RAG-Process is often referred as "RAG-Pipeline".
+
+**High-Level RAG Architecture:**
+
+![RAG_Updated](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/4ed80cc8-388c-44db-87d9-547cdb8fb757)
 
 
 ## Indexing:
