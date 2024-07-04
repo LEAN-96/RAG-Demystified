@@ -373,7 +373,7 @@ In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
 
-The retrieved documents are injected in a prompt and given to the generator (LLM) in a JSON format:
+In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This called prompt injection could look this this in an JSON format:
 
     [
         {
@@ -389,7 +389,7 @@ The retrieved documents are injected in a prompt and given to the generator (LLM
          },
     ]
 
-The authors propose two RAG model variants to decode from this set of latent documents: 
+For the generation part the authors propose two RAG model variants to decode from this set of latent documents: 
 
 "*We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
