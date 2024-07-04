@@ -226,7 +226,6 @@ Sources:
 
 [Fine-Tuning or Retrieval?Comparing Knowledge Injection in LLMs](https://arxiv.org/pdf/2312.05934)
 
-[A Practitioners Guide to Retrieval Augmented Generation (RAG)](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 # Naive RAG
 In this repository we will focus mainly on the Naive RAG approach. 
