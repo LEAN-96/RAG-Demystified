@@ -560,7 +560,7 @@ This is a collection of further readings and RAG application tools.
 
 # RAG Orchestration Frameworks & Tools
 
-| Frameworks | Tools | Evaluation | Visualization |
+| Frameworks | Tools | Evaluation & Observability| Visualization |
 |-----------------|-----------------|-----------------|-----------------|
 | [LangChain](https://www.langchain.com/) | [FlowiseAI](https://flowiseai.com/) | [RAGAS](https://github.com/explodinggradients/ragas) | [RAGexplorer](https://github.com/gabrielchua/RAGxplorer/) | 
 | [LlamaIndex](https://www.llamaindex.ai/) | [LangFlow](https://www.langflow.org/) | [Langsmith](https://www.langchain.com/langsmith) |[RAGmap](https://github.com/JGalego/RAGmap) |
@@ -571,7 +571,7 @@ This is a collection of further readings and RAG application tools.
 | [Cognita](https://github.com/truefoundry/cognita) |[Verta](https://www.verta.ai/rag)  |[Lunary](https://lunary.ai/) | 
 | [Dify](https://github.com/langgenius/dify) | [Quivr](https://docs.quivr.app/intro) | [DeepEval](https://github.com/confident-ai/deepeval) |  |
 |  | [RAGapp](https://github.com/ragapp/ragapp) | [Trulens](https://www.trulens.org/) |  |
-
+|  |  |[RagaAI](https://docs.raga.ai/raga-llm-hub/test-execution/evaluation)  |  |
 ## LLM Stack
 
 [LetsBuildAI](https://letsbuild.ai/)
