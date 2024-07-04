@@ -483,6 +483,9 @@ Sources:
 [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)
 
 # Applications of RAG:
+
+RAG can be utlized for different use cases: 
+
 - Chatbot for Customer support
 - Documents Q&A
 - Internal knowledge Q&A
@@ -490,6 +493,12 @@ Sources:
 - Multimodal Applications
 - Query analysis
 - Structured Data Extraction
+
+Sources: 
+
+[LangChain](https://python.langchain.com/v0.1/docs/use_cases/)
+
+[LlamaIndex](https://docs.llamaindex.ai/en/stable/use_cases/)
 
 # Advanced RAG
 Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers. Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant. The research field of RAG is moving fast, that´s why a lot of advanced RAG strategies are recently developed. If you want to dive deeper into the field I recommend the following material:
