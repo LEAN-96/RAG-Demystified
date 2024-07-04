@@ -217,7 +217,7 @@ Additionally, RAG enhances transparency and helps with error checking and copyri
 
 One advantage is its ability to reduce the need for frequent retraining (fine-tuning) of the model. Unlike traditional approaches, where the entire model must be retrained with new documents to change what it knows, RAG simplifies this process. By updating the external database with new information, RAG eliminates the need for the model to memorize everything, saving time and computational resources. This flexibility allows us to control what the model knows simply by swapping out the documents used for knowledge retrieval.
 
-Studies also show that RAG is outperforming fine-tuning 
+Studies also show that RAG is outperforming fine-tuning:
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/08aef257-10fe-43de-b63c-d8f14357afcd)
 [Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
@@ -225,7 +225,7 @@ Studies also show that RAG is outperforming fine-tuning
 [Figure](https://arxiv.org/pdf/2312.05934)
 
 
-Source:
+Sources:
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
