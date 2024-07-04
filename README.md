@@ -217,9 +217,17 @@ Additionally, RAG enhances transparency and helps with error checking and copyri
 
 One advantage is its ability to reduce the need for frequent retraining (fine-tuning) of the model. Unlike traditional approaches, where the entire model must be retrained with new documents to change what it knows, RAG simplifies this process. By updating the external database with new information, RAG eliminates the need for the model to memorize everything, saving time and computational resources. This flexibility allows us to control what the model knows simply by swapping out the documents used for knowledge retrieval.
 
+Studies also show that RAG is outperforming fine-tuning 
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/08aef257-10fe-43de-b63c-d8f14357afcd)
+
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ab339e5d-be98-4b38-ab0a-8dd19760bc0c)
+
+
+
 Source:
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
+[Fine-Tuning or Retrieval?Comparing Knowledge Injection in LLMs](https://arxiv.org/pdf/2312.05934)
 
 # Naive RAG
 
@@ -379,6 +387,8 @@ The authors propose two RAG model variants to decode from this set of latent doc
 
 "*We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
+"*RAG employs a form of late fusion to integrate knowledge from all retrieved documents, meaning it makes individual answer predictions for document-question pairs and then aggregates the final prediction scores. Critically, using late fusion allows us to back-propagate error signals in the output to the retrieval mechanism, which can substantially improve the performance of the end-to-end system.*" (Lewis P, Riedel S, Kiela D, Piktus A [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/))
+
 ## RAG-Token Model
 "*The RAG-Token model can be seen as a standard, autoregressive seq2seq generator with transition probability:*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
@@ -422,12 +432,11 @@ This process allows the RAG-Token model to effectively combine retrieval and gen
 
 ## RAG-Sequence Model
 
-"*RAG employs a form of late fusion to integrate knowledge from all retrieved documents, meaning it makes individual answer predictions for document-question pairs and then aggregates the final prediction scores. Critically, using late fusion allows us to back-propagate error signals in the output to the retrieval mechanism, which can substantially improve the performance of the end-to-end system.*" (Lewis P, Riedel S, Kiela D, Piktus A [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/))
+Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
+These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
 
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
-Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
-These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/850af0df-ce34-4f57-9d44-1da520298807)
 
