@@ -259,6 +259,7 @@ The entire index process is described as followed:
 
 
 ![VectorDB](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/d4d93974-2a75-4496-bfc0-24854da8137b)
+
 [Figure](https://weaviate.io/blog/what-is-a-vector-database)
 
 
@@ -291,6 +292,7 @@ $$\text{E}_{Q}(q)$$
 2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This search, also called vector search or similarity search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the document chunk vectors. For this purpose mathematical operations like Euclidean distance, Cosine similarity, Manhattan distance or Dot product can be applied measuring the distance between two vector representations to determine their similarity.  In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.  This step is implemented within the FAISS index and prepares the relevant documents for the generation process.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/394f7ab3-e2cc-4abf-8f0d-fba5ad1d6b8a)
+
 [Figure](https://weaviate.io/blog/what-is-a-vector-database)
 
 "*Calculating top-k(pη(·|x)), the list of k documents z with highest prior probability pη(z|x), is a Maximum Inner Product Search (MIPS) problem, which can be approximately solved in sub-linear time.*" (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
