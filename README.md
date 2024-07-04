@@ -361,7 +361,7 @@ Before we jump to the generation phase a short visualized recap about the formul
 [Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ## Generation: 
-In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters is being used. However, for applying RAG any generator/LLM can be utilzed.
+In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters is being used. However, for applying RAG any generator (LLM) can be utilzed.
 
 
 1. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt and given to the LLM for generating a response.
@@ -373,7 +373,7 @@ In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
 
-In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This called prompt injection could look this this in an JSON format:
+In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This called prompt injection could look this in an JSON format:
 
     [
         {
@@ -389,7 +389,7 @@ In practice, the question and retrieved documents are injected in a prompt and g
          },
     ]
 
-For the generation part the authors propose two RAG model variants to decode from this set of latent documents: 
+For the generation part the authors propose two RAG model variants to decode from this set of latent documents and for producing distributions over the generated text : 
 
 "*We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
@@ -403,7 +403,7 @@ $$p_{\text{RAG-Token}}(y|x) \approx \prod_{i}^N \sum_{z \in \text{top-k}(p(⋅|x
 ==
 
 
-Instead of picking one document and generating the entire answer from it, the RAG-Token model looks at multiple documents for each word (or token) to decide the best word to use next in the answer. Imagine you are writing an answer word by word. For the first word, the model considers all K documents and decides the best word based on the information from all of them. After choosing the first word, it repeats the process for the second word, again considering the top K documents to pick the best one. For each word, the model creates a distribution (a set of possible words) from each document. It then combines these distributions to decide the final word. This process, a modified beam search, ensures the answer is well-informed by considering all the retrieved documents. This method allows the model to draw information from different sources for each word, making the answer more comprehensive and accurate. It doesn't rely on just one document for the entire answer but uses multiple documents dynamically for each step.
+Instead of picking one document and generating the entire answer from it, the RAG-Token model looks at multiple documents for each word (or token) to decide the best word to use next in the answer. Imagine you are writing an answer word by word. For the first word, the model considers all K documents and decides the best word based on the information from all of them. After choosing the first word, it repeats the process for the second word, again considering the top K documents to pick the best one. For each word, the model creates a distribution (a set of possible words) from each document. It then combines these distributions to decide the final word. This process, a standard beam search, ensures the answer is well-informed by considering all the retrieved documents. This method allows the model to draw information from different sources for each word, making the answer more comprehensive and accurate. It doesn't rely on just one document for the entire answer but uses multiple documents dynamically for each step.
 
 
 Let's break down this formula step by step:
@@ -438,8 +438,8 @@ This process allows the RAG-Token model to effectively combine retrieval and gen
 
 ## RAG-Sequence Model
 
-Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response.
-These documents act as a consistent source of context throughout the generation process.The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents.
+Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response. 
+These documents act as a consistent source of context throughout the generation process. The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents. This process can be seen as a modified beam search.
 
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
 
