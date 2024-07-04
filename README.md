@@ -81,9 +81,10 @@ At each step, the model looks at the probabilities of all possible next words an
 
 Instead of selecting just one word at each step, beam search keeps track of the top N most likely sequences (where N is the beam size). At each step, the model expands each of the N sequences by considering all possible next words. It then keeps the top N sequences based on their combined probabilities. This process continues until the model generates an end-of-sequence token or reaches the maximum length. The sequence with the highest overall score is chosen as the final output. Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
 
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/bb93bd3d-ff1f-45f5-a9a6-b8b686246b14)
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/dc6914dd-fbee-4bc3-9735-f855795fa6f9)
 
-[Figure](https://discuss.huggingface.co/t/is-beam-search-always-better-than-greedy-search/2943)
+
+[Figure](https://heidloff.net/article/greedy-beam-sampling/)
 
 Sources:
 
