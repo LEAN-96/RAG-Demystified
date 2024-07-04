@@ -34,7 +34,7 @@ Example: When given a few examples of a specific task within the prompt, like tr
 LLMs can perform complex tasks involving multiple reasoning steps, such as solving mathematical word problems. 
 Example: Through techniques like chain-of-thought prompting, LLMs can break down and solve problems that require several logical steps. 
 
-[A Survey of Large Language Models](https://arxiv.org/abs/2303.18223) 
+Source: [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223) 
 
 # LLM Architecture: Transformer 
 The Transformer architecture, introduced by [Vaswani et al. in 2017](https://arxiv.org/abs/1706.03762), revolutionized natural language processing (NLP) by enabling efficient parallelization and handling long-range dependencies in text. It has become the foundation for many state-of-the-art language models. 
@@ -120,9 +120,7 @@ LLMs are stochastic or probabilistic. Sending the same prompt multiple times can
 6. Resource-Intensive
 LLMs are generally very large, requiring many costly GPU machines for training and serving. This size can also lead to poor service level agreements (SLAs), particularly in terms of latency.
 
-Source:
-
-[Large Language Models: A Survey](https://arxiv.org/html/2402.06196v2#S4)
+Source: [Large Language Models: A Survey](https://arxiv.org/html/2402.06196v2#S4)
 
 # Optimize LLMs output
 There are four approaches to enhance the output of LLM´s, where each of them ranges from easy and cheap to difficult and expensive to deploy. Here we will explain three of them and what sets them apart, before we discuss the fourth, Retrieval-Augmented Generation in the next chapter.
@@ -156,9 +154,7 @@ One-Shot Prompting: You give the AI one example to help it understand what you w
 Few-Shot Prompting: You give the AI a few examples to make things even clearer.
 These examples are included in the prompt to provide the necessary context, helping the AI give more accurate answers.
 
-Source:
-
-[The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
+Source: [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
 
 
 ## Retrieval-Augmented Generation (RAG):
