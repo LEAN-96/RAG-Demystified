@@ -64,7 +64,7 @@ Before LLMs can generate text, they must process the input text in a language th
 2. The final output sequence is produced, which can be a translated sentence, a summary, or any other sequence-based task.
 
 
-The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. Here how the entire architecture is illustrated in the initial transformer [paper](https://arxiv.org/abs/1706.03762)
+The Transformer architecture is a powerful model that processes text efficiently and understands context through self-attention. By breaking down the input into embeddings, adding positional information, and using multiple layers of attention and feed-forward networks, it can generate accurate and contextually relevant outputs. Here how the entire architecture is illustrated in the initial transformer [paper](https://arxiv.org/abs/1706.03762):
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/812bdc85-050c-4aa7-ad59-7644694c237f)
 
@@ -219,8 +219,6 @@ Additionally, RAG enhances transparency and helps with error checking and copyri
 One advantage is its ability to reduce the need for frequent retraining (fine-tuning) of the model. Unlike traditional approaches, where the entire model must be retrained with new documents to change what it knows, RAG simplifies this process. By updating the external database with new information, RAG eliminates the need for the model to memorize everything, saving time and computational resources. This flexibility allows us to control what the model knows simply by swapping out the documents used for knowledge retrieval.
 
 Studies also show that RAG is outperforming fine-tuning:
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/08aef257-10fe-43de-b63c-d8f14357afcd)
-[Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ab339e5d-be98-4b38-ab0a-8dd19760bc0c)
 [Figure](https://arxiv.org/pdf/2312.05934)
@@ -303,7 +301,7 @@ $$\text{E}_{Q}(q)$$
 "*Given a question q at run-time, we derive its embedding vq = EQ(q) and retrieve the top k passages with embeddings closest to vq.*" (Karpukhin V, Oğuz B, Min S, et al (2020) Dense Passage Retrieval for Open-Domain Question Answering)
 
 
-2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This search, also called vector search or similarity search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the document chunk vectors. For this purpose mathematical operations like Euclidean distance, Cosine similarity, Manhattan distance or Dot product can be applied measuring the distance between two vector representations to determine their similarity.  In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.  This step is implemented within the FAISS index and prepares the relevant documents for the generation process.
+2. Document Retrieval: Using the encoded query, the system searches a large corpus of information to retrieve relevant documents or passages. This search, also called vector search or similarity search, finds top K document chunks within the indexed corpus by calculating similarity scores between the query vector and the document chunk vectors. For this purpose mathematical operations like Euclidean distance, Cosine similarity, Manhattan distance or Dot product can be applied measuring the distance between vector representations to determine their similarity.  In the paper the similarity between the question and the document passage is using the dot product, a Maximum Inner Product Search (MIPS) algorithm.  This step is implemented within the FAISS index and prepares the relevant documents for the generation process.
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/394f7ab3-e2cc-4abf-8f0d-fba5ad1d6b8a)
 
