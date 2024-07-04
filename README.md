@@ -219,15 +219,19 @@ One advantage is its ability to reduce the need for frequent retraining (fine-tu
 
 Studies also show that RAG is outperforming fine-tuning 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/08aef257-10fe-43de-b63c-d8f14357afcd)
+[Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ab339e5d-be98-4b38-ab0a-8dd19760bc0c)
-
+[Figure](https://arxiv.org/pdf/2312.05934)
 
 
 Source:
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
+
 [Fine-Tuning or Retrieval?Comparing Knowledge Injection in LLMs](https://arxiv.org/pdf/2312.05934)
+
+[A Practitioners Guide to Retrieval Augmented Generation (RAG)](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 # Naive RAG
 
