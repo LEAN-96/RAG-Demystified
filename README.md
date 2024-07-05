@@ -190,7 +190,7 @@ RAG summarized by the authors:
 "*We build RAG models where the parametric memory is a pre-trained seq2seq transformer, and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We combine these components in a probabilistic model trained end-to-end. The retriever (Dense Passage Retriever, henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens).*"
 
 
-In simple terms, a user's input x is used to search for relevant top-k documents z, which are then combined with a prompt and given to the model to create a final output y. If the interaction involves multiple turns, previous conversation history can be included in the prompt.
+In simple terms, a user's input x is used to search for relevant top-k documents z, which are then combined with a prompt and given to the model to create a final output y.
 
 ## Key components used:
 
