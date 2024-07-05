@@ -363,7 +363,7 @@ Before we jump to the generation phase a short visualized recap about the formul
 [Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
 ## Generation: 
-In the paper for the generator [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters is being used. However, for applying RAG any generator (LLM) can be utilzed.
+For the generator the authors used [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters. However, for applying RAG any generator (LLM) can be utilzed.
 
 
 1. Integration of Context: Once the documents are encoded, they are ready to be combined with the encoded query. This expanded context is then incorporated into the prompt and given to the LLM for generating a response. The model weighs each of the documents using a retrieval score when generating the answer.
