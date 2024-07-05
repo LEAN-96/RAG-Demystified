@@ -431,10 +431,15 @@ This process allows the RAG-Token model to effectively combine retrieval and gen
 
 ## RAG-Sequence Model
 
-Instead of picking different pieces of information for each word, the model uses the same set of K documents for generating the entire response. 
-These documents act as a consistent source of context throughout the generation process. The generator produces a probability distribution for the entire sequence (all the words in the answer and considering the previous words) using each of the K documents. It calculates the likelihood of different sequences by using the context provided by each of the K documents. The model combines these probabilities to determine the most likely sequence of words, effectively using the best information from all the documents. This process can be seen as a modified beam search.
+The RAG-Sequence model uses the same retrieved document to generate the entire output sequence.These document act as a consistent source of context throughout the generation process. This process can be seen as a modified beam search, that means beam search is run for each document z.
+The decoding process in RAG-Sequence can be approached in two ways, where both run a initial beam search for each retrieved document:
 
+1. This strategy involves running additional forward passes for each document where the hypothesis does not appear in the beam search. The generator probability is then multiplied by the retriever probability p η (z∣x), and the probabilities are summed across all beams to get the final marginal probabilities.
 "*We refer to this decoding procedure as “Thorough Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
+2. This strategy approximates the probability p θ (y∣x,zi) as zero for any hypothesis not generated during the initial beam search. This method avoids the need for additional forward passes, making it more efficient, especially for longer output sequences.
+"*We refer to this decoding procedure as “Fast Decoding.*” (Lewis P, Perez E, Piktus A, et al (2021) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks)
+
 
 
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/850af0df-ce34-4f57-9d44-1da520298807)
@@ -470,6 +475,9 @@ Here, ( 𝑦 ) is broken down into individual tokens (words or characters). For 
 
 $$\prod_{i=1}^{N} p_{\theta}(y_i | x, z, y_{1:i-1})$$
 
+
+
+In summary, the RAG-Sequence and RAG-Token models provide robust solutions for knowledge-intensive generation tasks by leveraging both parametric and non-parametric memory. The RAG-Sequence model uses the same retrieved document to generate the entire output sequence, ensuring consistency and coherence in the generated text. On the other hand, the RAG-Token model allows for more flexibility by using different documents for each token, which can enhance the diversity and specificity of the generated content.Both models have shown to outperform traditional parametric-only models like BART in various tasks, including open-domain question answering and Jeopardy question generation. RAG-Sequence tends to produce more coherent and contextually consistent outputs, while RAG-Token excels in generating responses that combine information from multiple sources, leading to more factual and diverse outputs.
 
 Sources:
 
