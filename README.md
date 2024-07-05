@@ -156,8 +156,11 @@ Providing clear and specific prompts helps the AI understand exactly what you wa
 
 In-Context Learning (ICL) is a technique where the model is taught by providing examples or instructions directly within the prompt. This method allows the model to learn and adapt to specific tasks without the need for additional training. ICL can be particularly useful for tasks that require the model to understand and replicate specific patterns or formats.
 Giving the model examples is referred as Shot Prompting.
+
 One-Shot Prompting: You give the AI one example to help it understand what you want.
+
 Few-Shot Prompting: You give the AI a few examples to make things even clearer.
+
 These examples are included in the prompt to provide the necessary context, helping the AI give more accurate answers.
 
 Source: [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
