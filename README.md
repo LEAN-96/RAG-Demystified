@@ -73,11 +73,11 @@ The Transformer architecture is a powerful model that processes text efficiently
 
 Decoding strategies are methods used by language models to generate text based on a given input prompt. These strategies determine how the model selects the next word in a sequence. Let's focus on two popular decoding strategies: Greedy Search and Beam Search.
 
-### Greedy Search is a straightforward and fast decoding strategy. Here's how it works:
+### Greedy Search:
 
 At each step, the model looks at the probabilities of all possible next words and selects the one with the highest probability. Once the most probable word is chosen, it becomes part of the output sequence, and the process repeats for the next word. This method is computationally efficient because it only considers the most likely word at each step, without evaluating other potential sequences. However, Greedy search might miss out on better overall sequences because it doesn't consider the long-term context. It only focuses on the immediate next word, which can lead to less coherent or meaningful sentences.
 
-### Beam Search is a more sophisticated decoding strategy that balances efficiency and optimality. Here's how it works:
+### Beam Search:
 
 Instead of selecting just one word at each step, beam search keeps track of the top N most likely sequences (where N is the beam size). At each step, the model expands each of the N sequences by considering all possible next words. It then keeps the top N sequences based on their combined probabilities. This process continues until the model generates an end-of-sequence token or reaches the maximum length. The sequence with the highest overall score is chosen as the final output. Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
 
