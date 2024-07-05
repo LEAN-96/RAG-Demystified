@@ -103,21 +103,27 @@ Sources:
 While Large Language Models (LLMs) are powerful tools, they come with several important limitations:
 
 1. Hallucinations and Truthfulness
+
 LLMs can sometimes generate information that is incorrect or entirely made up, a phenomenon known as "hallucination." This issue becomes more problematic when combined with other concerns like bias, user privacy, and security risks. Moreover, LLMs act as "black boxes," meaning we can't easily understand how they make their predictions. Because LLMs do not have a notion of "truth" and are often trained on a mix of reliable and unreliable content, they can produce very plausible but incorrect answers.
 
 2. Fixed Knowledge
+
 LLMs have a fixed amount of knowledge based on what they learned during their training (known as parametric memory). They can't adapt to new information, making them less effective for tasks requiring the latest or highly detailed knowledge, especially in specialized fields. This limitation can lead to irrelevant or even harmful content. Expanding an LLM's knowledge through fine-tuning is expensive and resource-intensive.
 
 3. Technical Restrictions
+   
 LLMs have technical limitations, such as the amount of text they can process at once (token limits). This affects their ability to handle large blocks of text, making it challenging to use them for bigger projects.
 
 4. Lack of State/Memory
+   
 LLMs do not have memory or state. They cannot remember information from previous prompts, which is a significant limitation for applications that require continuity or context over multiple interactions.
 
 5. Stochastic Nature
+
 LLMs are stochastic or probabilistic. Sending the same prompt multiple times can yield different responses each time. While parameters like "temperature" can limit this variability, it remains an inherent property of their training.
 
 6. Resource-Intensive
+
 LLMs are generally very large, requiring many costly GPU machines for training and serving. This size can also lead to poor service level agreements (SLAs), particularly in terms of latency.
 
 Source: [Large Language Models: A Survey](https://arxiv.org/html/2402.06196v2#S4)
