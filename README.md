@@ -317,6 +317,7 @@ $$\text{E}_{Q}(q)$$
 
 $$p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$
 ==
+$$\text{sim}(q, p) = E_Q(q)^\top E_P(p)$$
 $$\text{sim}(q, p) = p_{\eta}(z|x) \propto \exp(d(z)^{\top}q(x))$$$$
 
 Both formulas are about finding the best match between a question and some passages.
