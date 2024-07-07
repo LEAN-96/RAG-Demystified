@@ -569,15 +569,9 @@ This is a collection of further readings and RAG application tools.
 
 [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
 
+[Retrieval-Augmented Generation for AI-Generated Content: A Survey (Repository)](https://github.com/hymie122/RAG-Survey)
+
 [RAG for LLMs](https://www.promptingguide.ai/research/rag)
-
-# Advanced RAG
-
-| Pre-Retrieval Process | Post-Retrieval Process | Generation Process |
-|-----------------|-----------------|-----------------|
-|  |[RAFT: Adapting Language Model to Domain Specific RAG](http://arxiv.org/abs/2403.10131)|  |
-|  |[Corrective Retrieval Augmented Generation](http://arxiv.org/abs/2401.15884) |  |
-
 
 
 
