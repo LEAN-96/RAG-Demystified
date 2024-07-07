@@ -375,7 +375,7 @@ For the generator the authors used [BART-large](https://arxiv.org/abs/1910.13461
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
 
-In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This called prompt injection could look this in an JSON format:
+In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This is called prompt injectionl. For the [DPR](https://github.com/facebookresearch/DPR) they used a JSON format which looks like following:
 
     [
         {
@@ -390,6 +390,16 @@ In practice, the question and retrieved documents are injected in a prompt and g
                     "has_answer": true|false
          },
     ]
+
+However, nowadays tools like [LangChain](https://www.langchain.com/) and [LlamaIndex](https://www.llamaindex.ai/) uses Prompt Templates, where the question and context is passed to the generator through variables. The context contains the top-k relevant documents based on the question:
+
+      Answer the question based on the context:
+      
+      Question: {question}
+
+      Context: {context}
+
+      Answer:
 
 For the generation part the authors propose two RAG model variants to decode from this set of latent documents and for producing distributions over the generated text : 
 
