@@ -393,7 +393,7 @@ In practice, the question and retrieved documents are injected in a prompt and g
          },
     ]
 
-However, nowadays tools like [LangChain](https://www.langchain.com/) and [LlamaIndex](https://www.llamaindex.ai/) uses Prompt Templates, where the question and context is passed to the generator through variables. The context contains the top-k relevant documents based on the question:
+However, nowadays tools like [LangChain](https://www.langchain.com/) and [LlamaIndex](https://www.llamaindex.ai/) uses prompt templates, where the question and context is passed to the generator through variables. The context contains the top-k relevant documents based on the question:
 
       Answer the question based on the context:
       
