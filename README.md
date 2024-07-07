@@ -533,6 +533,8 @@ Naive RAG, has some drawbacks. It may suffer from low precision, meaning it some
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
+[Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)
+
 [RAG for LLMs](https://www.promptingguide.ai/research/rag)
 
 # Modular RAG
