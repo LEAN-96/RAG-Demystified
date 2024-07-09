@@ -13,7 +13,7 @@ Join us on a journey of discovery as we unravel the mysteries of RAG and provide
 
 
 
-# Fundamentals of Large Language Models (LLMs): 
+# Fundamentals of Large Language Models (LLMs) 
 
 Large Language Models (LLMs) refer to advanced types of AI models, typically based on Transformer architectures, that have hundreds of billions (or more) parameters. These models are trained on vast amounts of text data, examples being GPT-3, PaLM, Galactica, and LLaMA. LLMs have impressive capabilities in understanding natural language and solving complex tasks through text generation. 
 
@@ -69,15 +69,15 @@ The Transformer architecture is a powerful model that processes text efficiently
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/812bdc85-050c-4aa7-ad59-7644694c237f)
 
 
-## Decoding strategies:
+## Decoding strategies
 
 Decoding strategies are methods used by language models to generate text based on a given input prompt. These strategies determine how the model selects the next word in a sequence. Let's focus on two popular decoding strategies: Greedy Search and Beam Search.
 
-### Greedy Search:
+### Greedy Search
 
 At each step, the model looks at the probabilities of all possible next words and selects the one with the highest probability. Once the most probable word is chosen, it becomes part of the output sequence, and the process repeats for the next word. This method is computationally efficient because it only considers the most likely word at each step, without evaluating other potential sequences. However, Greedy search might miss out on better overall sequences because it doesn't consider the long-term context. It only focuses on the immediate next word, which can lead to less coherent or meaningful sentences.
 
-### Beam Search:
+### Beam Search
 
 Instead of selecting just one word at each step, beam search keeps track of the top N most likely sequences (where N is the beam size). At each step, the model expands each of the N sequences by considering all possible next words. It then keeps the top N sequences based on their combined probabilities. This process continues until the model generates an end-of-sequence token or reaches the maximum length. The sequence with the highest overall score is chosen as the final output. Beam search is more computationally intensive than greedy search because it evaluates multiple sequences simultaneously.
 
@@ -98,7 +98,7 @@ Sources:
 
 [Large Language Models: A Survey](https://arxiv.org/abs/2402.06196)
 
-# Limitations of Large Language Models (LLMs):
+# Limitations of Large Language Models (LLMs)
 
 While Large Language Models (LLMs) are powerful tools, they come with several important limitations:
 
@@ -166,12 +166,12 @@ These examples are included in the prompt to provide the necessary context, help
 Source: [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608):
 
 
-## Retrieval-Augmented Generation (RAG):
+## Retrieval-Augmented Generation (RAG)
 
 ![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
 
 
-To address the limitations of LLMs, the field of AI has introduced a general-purpose fine-tuning recipe called Retrieval-Augmented Generation (RAG). RAG was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) in 2020. The authors introduced RAG as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge). RAG builds upon the advancements in large language models (LLMs) like GPT (Generative Pre-trained Transformer) models, integrating retrieval-based methods to enhance the generation process and to overcome the fixed amount of knowledge (Parametric knowledge).
+To address the limitations of LLMs, the field of AI has introduced a "general-purpose fine-tuning recipe" called Retrieval-Augmented Generation (RAG). RAG was first introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) in 2020. The authors introduced RAG as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge). RAG builds upon the advancements in large language models (LLMs) like GPT (Generative Pre-trained Transformer) models, integrating retrieval-based methods to enhance the generation process and to overcome the fixed amount of knowledge (Parametric knowledge).
 
 Let's explore RAG through the analogy of a student attending an exam:
 Think of a pre-trained Large Language Model (LLM) as a closed-book exam where the student relies solely on their memorized knowledge without referring to any materials. They're expected to answer questions based on what they've learned beforehand. Now, picture RAG as an open-book exam for the same student, but with a twist: they haven't studied! In this scenario, the student can access a textbook during the exam, similar to how RAG integrates an external knowledge base with the language model. In essence, RAG is like an open-book exam without studying, where the student (or the model) can access additional resources but must still navigate through them to find the correct information, while pre-trained LLMs are more like closed-book exams where the model can only use what it already knows.
@@ -192,7 +192,7 @@ RAG summarized by the authors:
 
 In simple terms, a user's input x is used to search for relevant top-k documents z, which are then combined with a prompt and given to the model to create a final output y.
 
-## Key components used:
+## Key components used
 
 
 + Generator = Encoder-Decoder pre-trained Seq2Seq Transformer, [BART-large](https://arxiv.org/abs/1910.13461).
@@ -215,7 +215,7 @@ Sources:
 
 [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)
 
-# Benefits of RAG:
+# Benefits of RAG
 
 RAG improves the quality of the text generated by the model and ensures that it's accurate and up-to-date. This approach also helps to reduce the problem of generating incorrect information, known as "hallucinations," by making the model rely on existing documentation. With RAG, we enhance the abilities of a large language model (LLM) by adding relevant context from a knowledge base. This context is inserted into the prompt, leveraging the LLM’s in-context learning abilities to produce more accurate and relevant responses.
 
@@ -248,7 +248,7 @@ The basic RAG process involves three phases: Indexing, retrieval, and generation
 ![RAG_Updated](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/4ed80cc8-388c-44db-87d9-547cdb8fb757)
 
 
-## Indexing:
+## Indexing
 Transforming unstructured data into a format that AI models can efficiently process is a key step in setting up RAG. Therefore, Indexing is a crucial step in preparing data. It involves several key steps:
 
 1. Data Transformation: We start by getting our data ready. This involves cleaning up and extracting information from different formats like PDFs or web pages. Then, we make sure everything is in a standard text format that the model can understand.
@@ -291,7 +291,7 @@ In ordner to compare we ingested the same document with the same metrics using a
 
 
 
-## Retrieval:
+## Retrieval
 Retrieval in RAG involves fetching highly relevant context from a retriever. Here is how it works:
 
 1. Encoding of User Query: The user query is processed and encoded into a representation that the system can work with. The retriever transforms the question into a vector using the fine-tuned query encoder BERT.
@@ -364,7 +364,7 @@ Before we jump to the generation phase a short visualized recap about the formul
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b77511bb-85c4-49d5-844c-948995dd8c2a)
 [Figure](https://cameronrwolfe.substack.com/p/a-practitioners-guide-to-retrieval)
 
-## Generation: 
+## Generation 
 For the generator the authors used [BART-large](https://arxiv.org/abs/1910.13461), a pre-trained seq2seq transformer with 400M parameters. However, for applying RAG any generator (LLM) can be utilzed.
 
 
@@ -510,7 +510,7 @@ Sources:
 
 [Retrieval Augmented Generation: Streamlining the creation of intelligent natural language processing models](https://ai.meta.com/blog/retrieval-augmented-generation-streamlining-the-creation-of-intelligent-natural-language-processing-models/)
 
-# Applications of RAG:
+# Applications of RAG
 
 RAG can be utlized for different use cases: 
 
@@ -545,10 +545,10 @@ Recent studies also shows the shift towards multimodal RAG approaches.
 # Conclusion
 RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and modular RAG will pave the way beyond text-based Q&A applications. 
 
-# Resources and Further Reading:
+# Resources and Further Reading
 This is a collection of further readings and RAG application tools.
 
-## Transformer:
+## Transformer
 [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 
 [Visual introduction to Transformers](https://www.youtube.com/watch?v=ISPId9Lhc1g)
@@ -557,7 +557,7 @@ This is a collection of further readings and RAG application tools.
 
 [Generative AI](https://ig.ft.com/generative-ai/)
 
-## Large Language Models:
+## Large Language Models
 
 [A Survey of Large Language Models](https://arxiv.org/abs/2303.18223)
 
@@ -567,7 +567,7 @@ This is a collection of further readings and RAG application tools.
 
 [Are Emergent Abilities of Large Language Models a Mirage?](https://arxiv.org/abs/2304.15004)
 
-## RAG:
+## RAG
 
 [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
 
