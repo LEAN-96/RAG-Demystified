@@ -537,13 +537,13 @@ Naive RAG, has some drawbacks. It may suffer from low precision, meaning it some
 
 [RAG for LLMs](https://www.promptingguide.ai/research/rag)
 
-# Modular RAG
-
-Recent studies also shows the shift towards multimodal RAG approaches.
-![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
 
 # Conclusion
-RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and modular RAG will pave the way beyond text-based Q&A applications. 
+RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and multimodal RAG will pave the way beyond text-based Q&A applications. 
+
+
+Recent studies underpin the shift towards multimodal RAG approaches. For this purpose we searched for "RAG" OR "Retrieval-Augmented Generation" on Lens.org, downloaded as RIS document and conducted a bibliometric analysis using [VOSViewer](https://www.vosviewer.com/) to visualize the results as network visualization.
+![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
 
 # Resources and Further Reading
 This is a collection of further readings and RAG application tools.
