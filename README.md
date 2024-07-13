@@ -532,6 +532,11 @@ The research field of RAG is moving fast, that´s why a lot of advanced RAG stra
 
 [RAG for LLMs](https://www.promptingguide.ai/research/rag)
 
+# Modular RAG
+
+Modular RAG is an advanced and flexible approach that builds on the principles of Naive and Advanced RAG. It introduces new modules and patterns to improve retrieval and generation processes. This modular architecture includes specialized components like a Search module for direct searches across diverse data sources, a Memory module leveraging LLM memory for better alignment with data distribution, and a Task Adapter module tailoring RAG for various downstream tasks. Modular RAG also supports iterative and adaptive retrieval processes, allowing dynamic reconfiguration and integration of new modules to address specific challenges, ultimately enhancing the quality and relevance of the generated content.
+
+Source: [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 # Conclusion
 RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and multimodal RAG will pave the way beyond text-based Q&A applications. 
