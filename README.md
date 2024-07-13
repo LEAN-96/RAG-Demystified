@@ -282,7 +282,7 @@ Here's what the visualization in a 2D space looks like:
 In contrast, we ingested the same document using a different embedding model with only 384 dimensions, [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5). As you can see the similarity distribution differs from the previous BERT embeddings. 
 ![RAG_Index_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/04c55cb0-ffdd-4278-be41-5a018f103733)
 
-The visualizations indicate, that BERT_Base seems to provide better embeddings for the given text chunks. It shows more distinct and compact clusters, indicating better preservation of both local and global structures in the data. BGE-Small shows a more spread-out distribution with less distinct clustering. The data points are more uniformly distributed, which might indicate less effective separation of different groups. 
+The visualizations indicate, that BERT_Base seems to provide better embeddings for the given text chunks. It shows more distinct and compact clusters, indicating better preservation of both local and global structures in the data. BGE-Small shows a more spread-out distribution with less distinct clustering. The data points are more uniformly distributed, which might indicate less effective separation of different groups. However, choosing the right embedding model also depends on the task and the data you want to retrieve
 
 ## Retrieval
 Retrieval in RAG involves fetching highly relevant context from a retriever. Here is how it works:
@@ -526,7 +526,11 @@ Sources:
 [LlamaIndex](https://docs.llamaindex.ai/en/stable/use_cases/)
 
 # Advanced RAG
-Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers. Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant. The research field of RAG is moving fast, that´s why a lot of advanced RAG strategies are recently developed. If you want to dive deeper into the field I recommend the following material:
+Naive RAG, has some drawbacks. It may suffer from low precision, meaning it sometimes includes irrelevant information in the response, and low recall, where it may miss relevant information. Another issue is the possibility of the model receiving outdated information, leading to inaccurate responses and the risk of generating content that doesn't align with the user's needs. This can result in confusing or incorrect answers. Referencing back to our initial example of an student however, just like the student faces the challenge of finding the right answers amidst the sea of information in the textbook, Naive RAG may struggle to discern which information is relevant. 
+
+Advanced RAG improves upon Naive RAG by enhancing retrieval quality through pre-retrieval and post-retrieval strategies. Pre-Retrieval strategies focuses on optimizing both the indexing structure and the original query. Key strategies include enhancing data granularity, optimizing index structures, adding metadata, and using query optimization techniques like query rewriting and expansion. In the post-retrieval process, the focus is on re-ranking the retrieved information to highlight the most relevant content and compressing the context to avoid information overload, ensuring only essential details are processed by the model.
+
+The research field of RAG is moving fast, that´s why a lot of advanced RAG strategies are recently developed. If you want to dive deeper into the field I recommend the following material:
 
 [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
