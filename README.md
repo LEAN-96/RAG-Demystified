@@ -167,10 +167,10 @@ Source: [The Prompt Report: A Systematic Survey of Prompting Techniques](https:/
 
 
 ## Retrieval-Augmented Generation (RAG)
-
-![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
-
 *Spoiler: The following terms, formulas and explaination are based on the [original RAG paper](http://arxiv.org/abs/2005.11401) and [DPR paper](https://arxiv.org/abs/2004.04906) released by a research team from Facebook AI.*
+![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
+*Bibliographic RAG-Terms Heatmap based on the main papers mentioned in this repository.*
+
 
 To address the limitations of LLMs, the field of AI has introduced a standardized approach to improve the performance of pre-trained language models on various knowledge-intensive tasks called Retrieval-Augmented Generation (RAG). RAG was introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge).  The authors uses the term "general-purpose fine-tuning recipe", which reflects RAG's utility in broadly enhancing pre-trained models across various tasks by integrating retrieval mechanisms.
 
