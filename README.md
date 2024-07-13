@@ -169,7 +169,7 @@ Source: [The Prompt Report: A Systematic Survey of Prompting Techniques](https:/
 ## Retrieval-Augmented Generation (RAG)
 *Spoiler: The following terms, formulas and explaination are based on the [original RAG paper](http://arxiv.org/abs/2005.11401) and [DPR paper](https://arxiv.org/abs/2004.04906) released by a research team from Facebook AI.*
 ![RAG_Origin_Terms_Heatmap](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/83d8af41-cc3d-47da-87da-24cda82c1c44)
-*Bibliographic RAG-Terms Heatmap based on the main papers mentioned in this repository.*
+*Bibliometric RAG-Terms Heatmap based on the main papers mentioned in this repository using the tool VOSViewer.*
 
 
 To address the limitations of LLMs, the field of AI has introduced a standardized approach to improve the performance of pre-trained language models on various knowledge-intensive tasks called Retrieval-Augmented Generation (RAG). RAG was introduced by [Lewis et. al](http://arxiv.org/abs/2005.11401) as a novel approach to natural language processing (NLP) tasks that require access to external knowledge sources (Non-parametric knowledge).  The authors uses the term "general-purpose fine-tuning recipe", which reflects RAG's utility in broadly enhancing pre-trained models across various tasks by integrating retrieval mechanisms.
@@ -537,7 +537,7 @@ The research field of RAG is moving fast, that´s why a lot of advanced RAG stra
 RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and multimodal RAG will pave the way beyond text-based Q&A applications. 
 
 
-Recent studies underpin the shift towards multimodal RAG approaches. For this purpose we searched for "RAG" OR "Retrieval-Augmented Generation" on Lens.org, downloaded as the results RIS document and conducted a bibliometric analysis using [VOSViewer](https://www.vosviewer.com/) to visualize the results as network visualization.
+Recent studies underpin the shift towards multimodal RAG approaches. For this purpose we searched for "RAG" OR "Retrieval-Augmented Generation" on Lens.org, downloaded the results as RIS document and conducted a bibliometric analysis using [VOSViewer](https://www.vosviewer.com/) to visualize the results as network visualization.
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
 
 # Resources and Further Reading
