@@ -279,7 +279,7 @@ Here's what the visualization in a 2D space looks like:
 
 ![BERT_RAG_Index_2D_t-SNE_Top3_chunk256 (1)](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/b896b4ee-54ba-4827-a140-f6b5f380970b)
 
-In ordner to compare we ingested the same document with the same metrics using a different embedding model, [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5):
+In contrast, we ingested the same document using a different embedding model with only 384 dimensions, [BGE-Small](https://huggingface.co/BAAI/bge-small-en-v1.5). As you can see the similarity distribution differs from the previous BERT embeddings. 
 ![RAG_Index_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/04c55cb0-ffdd-4278-be41-5a018f103733)
 
 
