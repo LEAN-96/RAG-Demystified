@@ -340,9 +340,10 @@ So, in simpler terms, this formula is like a way for the system to figure out wh
 
 ## Retrieval Visualization  
 
+For the BERT embedding model the Top-3 results based on our initial query looks like following:
 ![BERT_RAG_Retrieval_2D_t-SNE_Top3_chunk256 (1)](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/ff7a7f90-7834-4f75-839e-3385d85d7364)
 
-Based on our query the following top-3 document chunks were retrieved:
+For demonstration purposes we can also display our query, retrieved text chunks and their corresponding 2-D vectors as a table:
 
 | id | x | y | chunk |
 |-----------------|-----------------|-----------------|-----------------|
@@ -351,6 +352,7 @@ Based on our query the following top-3 document chunks were retrieved:
 | 4 | -23,154010314955553 | 3,0623941846106097 | memory have so far been only investigated for extractive downstream tasks. We explore a general-<br>purpose ﬁne-tuning recipe for retrieval-augmented generation (RAG) — models which combine pre-<br>trained parametric and non-parametric mem- |
 | 70 | -20,614559198905972 | 1,5474185954633568 | documents, relying primarily on non-parametric knowledge. We also compare to “Closed-Book QA”<br>approaches [ 52], which, like RAG, generate answers, but which do not exploit retrieval, instead |
 
+Same visualization for the BGE-Small embedding model. For this model all three retrieved results seems to be close to the query:
 ![RAG_Retrieval_2D_t-SNE_Top3_chunk256_1_out](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/c1fe9d3d-1151-4151-9c30-3b893fb1eae0)
 
 Before we jump to the generation phase a short visualized recap about the formulas we learned so far for indexing and retrieval:
