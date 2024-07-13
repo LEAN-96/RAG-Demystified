@@ -370,7 +370,7 @@ For the generator the authors used [BART-large](https://arxiv.org/abs/1910.13461
 $$p_{\theta}(y_i|x, z, y_{1:i-1})$$
 ==
 
-In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This is called prompt injection. For the [Dense Passage Retriever (DPR)](https://github.com/facebookresearch/DPR)  a Jthe authors used a JSON format which looks like following:
+In practice, the question and retrieved documents are injected in a prompt and given to the generator (LLM) to answer the question based on the retrieved documents. This is called prompt injection. For the [Dense Passage Retriever (DPR)](https://github.com/facebookresearch/DPR) the authors used a JSON format which looks like following:
 
     [
         {
