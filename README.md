@@ -539,10 +539,11 @@ Modular RAG is an advanced and flexible approach that builds on the principles o
 Source: [Retrieval-Augmented Generation for Large Language Models: A Survey](http://arxiv.org/abs/2312.10997)
 
 # Conclusion
-RAG is a prominent approach for augmenting LLMs with domain-specific data without the need of frequent model retraining or fine-tuning. It allows us to chat with data with minimal effort while utilizing the power of LLM´s. Frameworks like LangChain or LlamaIndex as well as Low-Code tools like FLowise and Langflow makes it fairly easy to implement basic to advanced RAG-Pipelines. Since the field is evolving dynamically we will soon see more and more enterprises and organizations implementing RAG within their environment. The shift towards agentic and multimodal RAG will pave the way beyond text-based Q&A applications. 
 
+Retrieval-Augmented Generation (RAG) is an effective method for enhancing Large Language Models (LLMs) with domain-specific data without the need for frequent retraining or fine-tuning. This approach allows us to interact with data effortlessly while leveraging the capabilities of LLMs. Tools and frameworks such as LangChain, LlamaIndex, Flowise, and Langflow make it straightforward to implement RAG pipelines, from basic to advanced levels. As the field continues to evolve, we can expect more enterprises and organizations to adopt RAG within their operations. The progression towards agentic and multimodal RAG will extend the utility beyond text-based Q&A applications.
 
-Recent studies underpin the shift towards multimodal RAG approaches. For this purpose we searched for "RAG" OR "Retrieval-Augmented Generation" on Lens.org, downloaded the results as RIS document and conducted a bibliometric analysis using [VOSViewer](https://www.vosviewer.com/) to visualize the results as network visualization.
+Recent studies highlight the shift towards multimodal RAG approaches. For example, a search for "RAG" or "Retrieval-Augmented Generation" on Lens.org, followed by a bibliometric analysis using [VOSViewer](https://www.vosviewer.com/), reveals terms like "query image" and "augmented image." These findings emphasize the potential of RAG in interacting with images, paving the way for innovative applications beyond traditional text-based interfaces.
+
 ![image](https://github.com/LEAN-96/RAG-Demystified/assets/150592634/14043b0d-80a7-4d27-9a65-db688f362972)
 
 # Resources and Further Reading
